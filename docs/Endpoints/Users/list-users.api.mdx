@@ -1,0 +1,128 @@
+---
+id: list-users
+title: "List Users"
+description: "This endpoint retrieves a list of users associated with the tenants."
+sidebar_label: "List Users"
+hide_title: true
+hide_table_of_contents: true
+api: eJytVMFO20AQ/RVrzktsB6cgn0CialGRQAQujaJosp7ES9fe7e46TWT536txDARSqRzwJfbum8l7M2+mhYBrD/kMHj05D3MBBXnplA3K1JDDQ6l8RHVhjapD5Cg4RRvyEUZa+RCZVdRwYITeG6kwUBH9UaGMQklRoBrr4EcgwJG3pvbkIW9hnCT88/aPbn+AAGnqQHXgW7RWK4l8Gz95hrTgZUkV8lvYWYIczPKJZAABtMXKaoJ81oIqIIfH6f04GWdpkmTp+SSdZHIis0Jmy6Ucn2WrBASslPNhUWPFmb43T7gEARpfz64MrTl3hUpDDgVVJr1Y89dImgoEsPQBe3zpjKZFz+X+9uYtl3OUqyKlM6IMs8mKhTvi2i2Wuz6kbrQW0Nji+PAZiQFy4LQnaXKSZA/paT5O80k2mnwZ/4TX4P/hmCZX9KNMB72XRaVqeO8W1PpzxWSnHxPT47pu3vEjoKJQGha0JnaHxVBCDrGXqNEF3Ma9aWMQ4Mlt2PhsnMZxm8sQrM/jGK0aDbbijsab9EjunTNFI/kj2ueBThymyeO4bZfoadE43XXxUYIbI1G/xM4FqHplen+rwG2Bac/4AbdHof28Rpd319GVkU1FdehnBQSwnj0mHSWjZBgrlP1YPbfv7jqaNtYax/V5w/hQs99DwsEUDEcXBzDoBARylb9dTcltlKR/Z+sxMaOt8aHC+oDQDW+T/Q56p7R93QqftY2G7RFoG2KrUdXMqS9CO3hlBi9eGeacefF6LI0PfL9v7CP3lY9/N+R2kM/mAjboFC77ZTTvBJSEBbneYL9ox7WXkiyXdIO6YR5Hq46d8GLhb18foOv+AtNk2uM=
+sidebar_class_name: "get api-method"
+info_path: reference/api-reference/Endpoints/Users/scalartax
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import Heading from "@theme/Heading";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"List Users"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/scalartax/users/"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+This endpoint retrieves a list of users associated with the tenants.
+
+<div>
+  <div>
+    <ApiTabs
+      label={undefined}
+      id={undefined}
+    >
+      <TabItem
+        label={"200"}
+        value={"200"}
+      >
+        <div>
+          
+          
+          OK
+          
+          
+        </div><div>
+          <MimeTabs
+            className={"openapi-tabs__mime"}
+            schemaType={"response"}
+          >
+            <TabItem
+              label={"application/json"}
+              value={"application/json"}
+            >
+              <SchemaTabs
+                className={"openapi-tabs__schema"}
+              >
+                <TabItem
+                  label={"Schema"}
+                  value={"Schema"}
+                >
+                  <details
+                    style={{}}
+                    className={"openapi-markdown__details response"}
+                    data-collapsed={false}
+                    open={true}
+                  >
+                    <summary
+                      style={{}}
+                      className={"openapi-markdown__details-summary-response"}
+                    >
+                      <strong>
+                        Schema
+                      </strong>
+                    </summary><div
+                      style={{"textAlign":"left","marginLeft":"1rem"}}
+                    >
+                      
+                    </div><ul
+                      style={{"marginLeft":"1rem"}}
+                    >
+                      <div
+                        style={{"marginTop":".5rem","marginBottom":".5rem"}}
+                      >
+                        
+                        
+                        object
+                        
+                        
+                      </div>
+                    </ul>
+                  </details>
+                </TabItem><TabItem
+                  label={"Example (from schema)"}
+                  value={"Example (from schema)"}
+                >
+                  <ResponseSamples
+                    responseExample={"[\n  {\n    \"id\": \"USR20241004185154c5c4dc4bbc274f0\",\n    \"first_name\": \"Hujab\",\n    \"last_name\": \"Doeg\",\n    \"email\": \"demo1@gmail.com\",\n    \"username\": \"demo1@gmail.com\",\n    \"role_id\": \"ROL202410041851548acfd1e7ee4a45f\",\n    \"created_by_id\": null,\n    \"updated_by_id\": null,\n    \"created_at\": \"2024-10-04T13:21:54.562Z\",\n    \"updated_at\": \"2024-10-04T13:21:54.562Z\",\n    \"role\": {\n      \"id\": \"ROL202410041851548acfd1e7ee4a45f\",\n      \"name\": \"Admin\",\n      \"description\": \"all\",\n      \"created_by_id\": null,\n      \"updated_by_id\": null,\n      \"created_at\": \"2024-10-04T13:21:54.432Z\",\n      \"updated_at\": \"2024-10-04T13:21:54.432Z\"\n    }\n  }\n]"}
+                    language={"json"}
+                  >
+                    
+                  </ResponseSamples>
+                </TabItem>
+              </SchemaTabs>
+            </TabItem>
+          </MimeTabs>
+        </div>
+      </TabItem>
+    </ApiTabs>
+  </div>
+</div>
+      

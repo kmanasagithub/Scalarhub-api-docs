@@ -1,0 +1,210 @@
+---
+id: scalartax
+title: "ScalarTax"
+description: "# ScalarTax API Documentation"
+sidebar_label: Introduction
+sidebar_position: 0
+hide_title: true
+custom_edit_url: null
+---
+
+import ApiLogo from "@theme/ApiLogo";
+import Heading from "@theme/Heading";
+import SchemaTabs from "@theme/SchemaTabs";
+import TabItem from "@theme/TabItem";
+import Export from "@theme/ApiExplorer/Export";
+
+<span
+  className={"theme-doc-version-badge badge badge--secondary"}
+  children={"Version: 1.0.0"}
+>
+</span>
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"ScalarTax"}
+>
+</Heading>
+
+
+
+# ScalarTax API Documentation
+
+## Overview
+
+The ScalarTax API provides a comprehensive set of endpoints to manage customers, accounts, users, products, transactions, companies, and nexuses. This documentation outlines the available endpoints and the corresponding CRUD operations, helping developers integrate and interact with the service efficiently.
+
+## Endpoints
+
+| Resource | Method | Endpoint | Description | Status Codes |
+| --- | --- | --- | --- | --- |
+| **Customers** | GET | `/customers` | Retrieve a list of customers | 200 OK, 500 Internal Server Error |
+|  | POST | `/customers` | Create a new customer | 201 Created, 400 Bad Request, 500 Internal Server Error |
+|  | GET | `/customers/:id` | Retrieve a single customer | 200 OK, 404 Not Found, 500 Internal Server Error |
+|  | PUT | `/customers/:id` | Update an existing customer | 200 OK, 400 Bad Request, 404 Not Found, 500 Internal Server Error |
+|  | DELETE | `/customers/:id` | Delete a customer | 204 No Content, 404 Not Found, 500 Internal Server Error |
+| **Accounts** | GET | `/accounts` | Retrieve a list of accounts | 200 OK, 500 Internal Server Error |
+|  | POST | `/accounts` | Create a new account | 201 Created, 400 Bad Request, 500 Internal Server Error |
+|  | GET | `/accounts/:id` | Retrieve a single account | 200 OK, 404 Not Found, 500 Internal Server Error |
+|  | PUT | `/accounts/:id` | Update an existing account | 200 OK, 400 Bad Request, 404 Not Found, 500 Internal Server Error |
+|  | DELETE | `/accounts/:id` | Delete an account | 204 No Content, 404 Not Found, 500 Internal Server Error |
+| **Users** | GET | `/users` | Retrieve a list of users | 200 OK, 500 Internal Server Error |
+|  | POST | `/users` | Create a new user | 201 Created, 400 Bad Request, 500 Internal Server Error |
+|  | GET | `/users/:id` | Retrieve a single user | 200 OK, 404 Not Found, 500 Internal Server Error |
+|  | PUT | `/users/:id` | Update an existing user | 200 OK, 400 Bad Request, 404 Not Found, 500 Internal Server Error |
+|  | DELETE | `/users/:id` | Delete a user | 204 No Content, 404 Not Found, 500 Internal Server Error |
+| **Products** | GET | `/products` | Retrieve a list of products | 200 OK, 500 Internal Server Error |
+|  | POST | `/products` | Create a new product | 201 Created, 400 Bad Request, 500 Internal Server Error |
+|  | GET | `/products/:id` | Retrieve a single product | 200 OK, 404 Not Found, 500 Internal Server Error |
+|  | PUT | `/products/:id` | Update an existing product | 200 OK, 400 Bad Request, 404 Not Found, 500 Internal Server Error |
+|  | DELETE | `/products/:id` | Delete a product | 204 No Content, 404 Not Found, 500 Internal Server Error |
+| **Transactions** | GET | `/transactions` | Retrieve a list of transactions | 200 OK, 500 Internal Server Error |
+|  | POST | `/transactions` | Create a new transaction | 201 Created, 400 Bad Request, 500 Internal Server Error |
+|  | GET | `/transactions/:id` | Retrieve a single transaction | 200 OK, 404 Not Found, 500 Internal Server Error |
+|  | PUT | `/transactions/:id` | Update an existing transaction | 200 OK, 400 Bad Request, 404 Not Found, 500 Internal Server Error |
+|  | DELETE | `/transactions/:id` | Delete a transaction | 204 No Content, 404 Not Found, 500 Internal Server Error |
+| **Companies** | GET | `/companies` | Retrieve a list of companies | 200 OK, 500 Internal Server Error |
+|  | POST | `/companies` | Create a new company | 201 Created, 400 Bad Request, 500 Internal Server Error |
+|  | GET | `/companies/:id` | Retrieve a single company | 200 OK, 404 Not Found, 500 Internal Server Error |
+|  | PUT | `/companies/:id` | Update an existing company | 200 OK, 400 Bad Request, 404 Not Found, 500 Internal Server Error |
+|  | DELETE | `/companies/:id` | Delete a company | 204 No Content, 404 Not Found, 500 Internal Server Error |
+| **Nexuses** | GET | `/nexuses` | Retrieve a list of nexuses | 200 OK, 500 Internal Server Error |
+|  | POST | `/nexuses` | Create a new nexus | 201 Created, 400 Bad Request, 500 Internal Server Error |
+|  | GET | `/nexuses/:id` | Retrieve a single nexus | 200 OK, 404 Not Found, 500 Internal Server Error |
+|  | PUT | `/nexuses/:id` | Update an existing nexus | 200 OK, 400 Bad Request, 404 Not Found, 500 Internal Server Error |
+|  | DELETE | `/nexuses/:id` | Delete a nexus | 204 No Content, 404 Not Found, 500 Internal Server Error |
+
+## Status Codes
+
+| Status Code | Description |
+| --- | --- |
+| **200 OK** | The request was successful. |
+| **201 Created** | The resource was created successfully. |
+| **204 No Content** | The resource was deleted successfully. |
+| **400 Bad Request** | The request was invalid or cannot be served. |
+| **404 Not Found** | The requested resource could not be found. |
+| **500 Internal Server Error** | An error occurred on the server. |
+| **503 Service Unavailable** | The server is currently unavailable (overloaded or down). |
+
+## Detailed Status Code Descriptions
+
+### HTTP 200 OK
+
+The request was successfully processed by the server. The response will contain the requested data.
+
+### HTTP 201 Created
+
+The request was successful and resulted in the creation of a new resource. The response will include a location header pointing to the new resource.
+
+### HTTP 204 No Content
+
+The request was successful, but there is no content to send in the response. This is typically used for successful deletions.
+
+### HTTP 400 Bad Request
+
+The server could not understand the request due to invalid syntax. The client should not repeat the request without modifications.
+
+### HTTP 404 Not Found
+
+The server can not find the requested resource. This can also be returned when the server does not want to reveal exactly why the request has been refused, or no other response is applicable.
+
+### HTTP 500 Internal Server Error
+
+The server encountered an unexpected condition that prevented it from fulfilling the request. This is a generic error message for unexpected conditions.
+
+### HTTP 503 Service Unavailable
+
+An HTTP 503 response from our servers indicates there is an unexpected spike in API access traffic. The server is usually operational within the next five minutes. If the outage persists or you receive any other form of an HTTP 5XX error, contact support.
+
+## Need Some Help?
+
+If you have questions or need help, refer to the following resources:
+
+- **Tutorials**: [ScalarHub YouTube Channel](https://www.youtube.com/@scalarhub)
+    
+- **FAQ Page**: [ScalarHub FAQ Page](https://scalarhub.ai/faqs/)
+    
+- **Help & Support**: [ScalarHub Help &amp; Support Page](https://scalarhub.ai/scalarhub-support-center/)
+    
+- **Discussion Forum & Blogs**: [ScalarHub Blogs](https://scalarhub.ai/blogs/)
+    
+- **Developer Forum**: Visit our [developer forum](https://scalarhub.ai/blogs/) to review topics, ask questions, and learn from others.
+    
+
+### Additional Resources
+
+- **Libraries and Code Examples**: \[Link to libraries and code examples\]
+    
+- **Making a Request**: \[Link to resources on making a request\]
+    
+
+This documentation provides a clear and structured overview of the ScalarTax API, making it easier for developers to integrate and interact with the service.
+
+<div
+  style={{"marginBottom":"2rem"}}
+>
+  <Heading
+    id={"authentication"}
+    as={"h2"}
+    className={"openapi-tabs__heading"}
+    children={"Authentication"}
+  >
+  </Heading><SchemaTabs
+    className={"openapi-tabs__security-schemes"}
+  >
+    <TabItem
+      label={"HTTP: Bearer Auth"}
+      value={"bearerAuth"}
+    >
+      
+      
+      
+      
+      <div>
+        <table>
+          <tbody>
+            <tr>
+              <th>
+                Security Scheme Type:
+              </th><td>
+                http
+              </td>
+            </tr><tr>
+              <th>
+                HTTP Authorization Scheme:
+              </th><td>
+                bearer
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </TabItem>
+  </SchemaTabs>
+</div><div
+  style={{"display":"flex","flexDirection":"column","marginBottom":"var(--ifm-paragraph-margin-bottom)"}}
+>
+  <h3
+    style={{"marginBottom":"0.25rem"}}
+  >
+    Contact
+  </h3><span>
+    API Support: [support@example.com](mailto:support@example.com)
+  </span><span>
+    URL: [http://example.com/supportt](mailto:http://example.com/supportt)
+  </span>
+</div><div
+  style={{"marginBottom":"var(--ifm-paragraph-margin-bottom)"}}
+>
+  <h3
+    style={{"marginBottom":"0.25rem"}}
+  >
+    Terms of Service
+  </h3><a
+    href={"http://example.com/terms/"}
+  >
+    http://example.com/terms/
+  </a>
+</div>
+      

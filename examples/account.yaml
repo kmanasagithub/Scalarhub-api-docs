@@ -1,0 +1,182 @@
+openapi: 3.0.0
+info:
+  title: ScalarTax
+  description : Accounts API Documentation
+  version: 1.0.0
+  contact:
+    name: API Support
+    url: http://example.com/supportt
+    email: support@example.com
+  termsOfService: http://example.com/terms/
+servers:
+  - url: https://api.example.com/v1
+    description: Production server
+  - url: http://{{base_url}}/
+    description: Local server
+paths:
+  /scalartax/accounts/:
+    post:
+      tags:
+        - Accounts
+      summary: Create Account
+      description: This endpoint allows you to create a new scalartax Accounts.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Account"
+        description: Created Account object
+        required: true
+      responses:
+        '201':
+          description: Account Created Successfully.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Account"
+                example:
+                    id: integer
+                    name: string
+                    subscription: integer
+                    createdby_id: null | string
+                    updatedby_id: null | string
+                    created_at: datetime
+                    updated_at: datetime
+        '422':
+          description:  Unprocessable Entity. Validation errors occurred during the creation.
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  errors: [ Company name can't be blank , Account status can't be blank ]
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error       
+    get:
+      tags:
+        - Accounts
+      summary: List Accounts
+      description: This endpoint retrieves a list of scalartax accounts.
+      responses:
+        '200':
+          description: OK    
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Account"
+                example:
+                  - id: string
+                    name: string
+                    subscription_id: string
+                    created_by_id: string
+                    updated_by_id: string
+                    effective_date: datetime
+                    account_status: string
+                    subscription:
+                      id: string
+                      name: string
+                      contract_acceptance_date: datetime
+                      contract_termination_date: datetime
+                      contract_effective_date: datetime
+                      contract_end_date: datetime
+                      service_activation_date: datetime
+                      service_end_date: datetime
+                      status: string
+                      billing_cycle: string
+                      billing_amount: boolean
+                      created_by_id: string
+                      updated_by_id: string
+                      created_at: datetime
+                      updated_at: datetime
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+  /scalartax/accounts/{id}:
+    get:
+      tags:
+        - Accounts
+      summary: Fetch Account
+      description: This endpoint retrieves the details of a specific scalartax account.
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: OK.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Account"
+                example:
+                  id: string
+                  name: string
+                  subscription_id: string
+                  created_by_id: string
+                  updated_by_id: string
+                  effective_date: datetime
+                  account_status: string
+                  subscription:
+                    id: string
+                    name: string
+                    contract_acceptance_date: datetime
+                    contract_termination_date: datetime
+                    contract_effective_date: datetime
+                    contract_end_date: datetime
+                    service_activation_date: datetime
+                    service_end_date: datetime
+                    status: string
+                    billing_cycle: string
+                    billing_amount: boolean
+                    created_by_id: string
+                    updated_by_id: string
+                    created_at: datetime
+                    updated_at: datetime
+        '404':
+          description: Not Found. Account with that Specific ID not Found.
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  error: Account Not Found.
+        '500':
+          description: Internal Serval Error.
+components:
+  schemas:
+    Account:
+      type: object
+      properties:
+        company_name:
+          type: string
+          description: The name of the company
+        account_status:
+          type: string
+          description: The status of the account (e.g., Active, Inactive)
+        username:
+          type: string
+          description: The username for the account
+        first_name:
+          type: string
+          description: The first name of the user
+        last_name:
+          type: string
+          description: The last name of the user
+        email:
+          type: string
+          format: email
+          description: The email address of the user
+      required:
+        - company_name
+        - account_status
+        - username
+        - first_name
+        - last_name
+        - email
+      xml:
+        Account

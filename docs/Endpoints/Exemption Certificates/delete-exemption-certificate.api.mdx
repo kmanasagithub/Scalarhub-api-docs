@@ -1,0 +1,186 @@
+---
+id: delete-exemption-certificate
+title: "Delete Exemption Certificate"
+description: "Delete Exemption Certificate"
+sidebar_label: "Delete Exemption Certificate"
+hide_title: true
+hide_table_of_contents: true
+api: eJyFVF1r2zAU/SviPm0g4nR0L3paaTIoK2tZuqcQiirf1OpsSZWuuwTj/z6u7DnpEphfbEvnnvtxjtQB6ecEag3LHTaBrHfiGiPZrTWaMMFGQtBRN0gYGdeB0w2CAluCBOtAQdBUgYRkKmw0qA5oHxiRKFr3DL2EiK+tjViCothiv+GVFLxLmBj/aT7nV4nJRJtrAAV332aHksyhJFFijYSlSK0xmNK2rev9jLNczi9Pab57El9968qZuG4T+Qaj+G2pElShWAU0TCtuFsJNQJBgvCN0xHQ6hJoTW++Kl8Sc3Wmr/ukFDYEE3Okm1MhbGKOPoGBKeygFen4kfD7X+I0jjE7XYoXxDaNYZh6Gv8ct8hzEWd1AQoNU+RIUDPMCOeikoEhG1zqS3hX4N/bxaMCp6GzZs6A5/yB6G2tQUBGFpIpCBzsbO50Z3xRvF/BvdffRl63JdQ080MtjGlUUXfekEz62se774oTg1htdT7Eb9trW55Fb4gHDKrfxoHcnoWd9k8TV/Y1YeNM26CjrCRK4wSHoYjafzUfptcnSj07nuFUbgo+s8LsWjoeQBkh2QaMto8alL0cwNiphbNLdlvW1Bs+zZUzB6OATNdodFfQf5d8NY7Io4Y6KUGvrmDR30Y2WWMNkiWzhc6YACcqWfB1UPhHHDPL9ZPV4+bXFuAe13kh409HqJxZp3UFpE3+XoLa6TnhS3nTU4MOP8Zr4KECeL3tc1G7P2um65T+Q8Av3w5XUb3oJFeoSY84+bFwZg4GOQk4ONRtsOjGL5e3yYQl9/wdk8MVP
+sidebar_class_name: "delete api-method"
+info_path: reference/api-reference/Endpoints/Exemption Certificates/scalartax
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import Heading from "@theme/Heading";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete Exemption Certificate"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/scalartax/exemption_certificates/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Delete Exemption Certificate
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<details
+  style={{"marginBottom":"1rem"}}
+  className={"openapi-markdown__details"}
+  data-collapsed={false}
+  open={true}
+>
+  <summary
+    style={{}}
+  >
+    <h3
+      className={"openapi-markdown__details-summary-header-params"}
+    >
+      Path Parameters
+    </h3>
+  </summary><div>
+    <ul>
+      <ParamsItem
+        className={"paramsItem"}
+        param={{"name":"id","in":"path","schema":{"type":"string"},"required":true,"enumDescriptions":[]}}
+      >
+        
+      </ParamsItem>
+    </ul>
+  </div>
+</details><div>
+  <div>
+    <ApiTabs
+      label={undefined}
+      id={undefined}
+    >
+      <TabItem
+        label={"200"}
+        value={"200"}
+      >
+        <div>
+          
+          
+          OK.Exemption certificate deleted successfully.
+          
+          
+        </div><div>
+          
+        </div>
+      </TabItem><TabItem
+        label={"404"}
+        value={"404"}
+      >
+        <div>
+          
+          
+          Not Found. Customer with the Specific ID not Found.
+          
+          
+        </div><div>
+          <MimeTabs
+            className={"openapi-tabs__mime"}
+            schemaType={"response"}
+          >
+            <TabItem
+              label={"application/json"}
+              value={"application/json"}
+            >
+              <SchemaTabs
+                className={"openapi-tabs__schema"}
+              >
+                <TabItem
+                  label={"Schema"}
+                  value={"Schema"}
+                >
+                  <details
+                    style={{}}
+                    className={"openapi-markdown__details response"}
+                    data-collapsed={false}
+                    open={true}
+                  >
+                    <summary
+                      style={{}}
+                      className={"openapi-markdown__details-summary-response"}
+                    >
+                      <strong>
+                        Schema
+                      </strong>
+                    </summary><div
+                      style={{"textAlign":"left","marginLeft":"1rem"}}
+                    >
+                      
+                    </div><ul
+                      style={{"marginLeft":"1rem"}}
+                    >
+                      <div
+                        style={{"marginTop":".5rem","marginBottom":".5rem"}}
+                      >
+                        
+                        
+                        object
+                        
+                        
+                      </div>
+                    </ul>
+                  </details>
+                </TabItem><TabItem
+                  label={"Example (from schema)"}
+                  value={"Example (from schema)"}
+                >
+                  <ResponseSamples
+                    responseExample={"{\n  \"error\": \"Customer Not Found.\"\n}"}
+                    language={"json"}
+                  >
+                    
+                  </ResponseSamples>
+                </TabItem>
+              </SchemaTabs>
+            </TabItem>
+          </MimeTabs>
+        </div>
+      </TabItem><TabItem
+        label={"500"}
+        value={"500"}
+      >
+        <div>
+          
+          
+          Internal Server Error
+          
+          
+        </div><div>
+          
+        </div>
+      </TabItem>
+    </ApiTabs>
+  </div>
+</div>
+      

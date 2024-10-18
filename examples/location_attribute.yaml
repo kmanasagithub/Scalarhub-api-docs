@@ -1,0 +1,187 @@
+openapi: 3.0.0
+info:
+  title: ScalarTax
+  description : Location Attribute API Documentation
+  version: 1.0.0
+  contact:
+    name: API Support
+    url: http://example.com/supportt
+    email: support@example.com
+  termsOfService: http://example.com/terms/
+servers:
+  - url: https://api.example.com/v1
+    description: Production server
+  - url: http://{{base_url}}/
+    description: Local server
+paths:
+  /scalartax/location_attributes:
+    post:
+      tags:
+        - Location Attributes
+      summary: Create Location Attribute
+      requestBody:
+        content:
+          application/json:
+            schema:
+              # $ref: "#/components/schema/Customer"
+        description: Location Attribute object
+        required: true
+      responses:
+        '201':
+          description: Location Attribute Created Successfully.
+          content:
+            application/json:
+              schema:
+                type: object
+                example: 
+        '422':
+          description:  Unprocessable Entity. Validation errors occurred during the creation.
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  errors: [ Attribute value can't be blank ]
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+    get:
+      tags:
+        - Location Attributes
+      summary: List Location Attributes
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                example: 
+                  - id: string
+                    location_id: string
+                    attribute_name: string
+                    attribute_value: string
+                    attribute_unit_of_measure: string
+                    updated_by_id: null | string
+                    created_by_id: null | string
+                    created_at: datetime
+                    updated_at: datetime
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+  /scalartax/location_attributes/{id}:
+    get:
+      tags:
+        - Location Attributes
+      summary: Fetch Location Attribute
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            applicaiotn/json:
+              schema:
+                type: object
+                example:
+                  id: string
+                  location_id: string
+                  attribute_name: string
+                  attribute_value: string
+                  attribute_unit_of_measure: string
+                  updated_by_id: null | string
+                  created_by_id: null | string
+                  created_at: datetime
+                  updated_at: datetime
+        '404':
+          description: Not Found. Location Attribute with that Specific ID not Found.
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  error: Location Attribute Not Found.
+        '500':
+          description: Internal Serval Error.
+    put:
+      tags:
+        - Location Attributes
+      summary: Update Location Attribute
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: OK. Location Attribute Updates Successfully.
+          content:
+            application/json:
+              schema:
+                type: object
+                example: 
+                  attribute_name: string
+                  attribute_value: string
+                  attribute_unit_of_measure: string
+                  updated_by_id: string
+                  id: string
+                  location_id: string
+                  created_by_id: string
+                  created_at: datetime
+                  updated_at: datetime
+        '400':
+          description: Bad Request
+        '404':
+          description: Not Found. Location Atttribute with that Specific ID not Found.
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  error: Location Attribute Not Found.
+        '422':
+          description: Unprocessable Entity. Validation errors occurred during the update.
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  errors: [Attribute value can't be blank]      
+        '500':
+          description: Internal Serval Error
+    delete:
+      tags:
+        - Location Attributes
+      summary: Delete Location Attribute
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: OK. Location Attribute Deletd Successfully.
+        '404':
+          description: Not Found. Location Attribute with the Specific ID not Found.
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  error: Location Attribute Not Found.
+        '500':
+          description: Internal Server Error
+

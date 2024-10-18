@@ -1,0 +1,245 @@
+---
+id: fetch-location-attribute
+title: "Fetch Location Attribute"
+description: "Fetch Location Attribute"
+sidebar_label: "Fetch Location Attribute"
+hide_title: true
+hide_table_of_contents: true
+api: eJyVVMFu2zAM/RWDpw0Q4nToLj6tQNuh2LAWS3cKgoCRmVqdLakSnSXw/O8DHddNGnfYcnFAPlIk3yMbYHyIkM3hq9PIxtnkgjmYVc0UYaHAY8CKmIKAGrBYEWRgclBgLGTgkQtQEHVBFULWAO+8ICIHYx+gVRDoqTaBcsg41NQuxBK9s5Gi4D9Mp/LJKepgvFQAGdx+AQXaWSbL4kXvS6PROLbpYxRIc/qkWz2SZlBAW6x8SeIy+UstCsq+x+WxGZ87XvbtjXg2WNZvuGpreOnWy4ow1uEIVPscmfLlard/0tZlmfxOBr8O9E9+ZMhAUrGp6CDvsb2Vn4Lz6fnpRL85Tq5dbfNJcsp08stwkXCBnMw8abM2Orm5TOwQM8qG5Pg/NigEFyAb0VryUt9zGx/HhHFjmYLFMplR2GCZXElGCVGvgNfEuhhpFRRUxIWTaT+Q1NcpOIM0aiwxMG7TQSYDxzFtTN6KzilsnnehDiVkUDD7mKUpejPpW51oV6WbM3hd011wea27evZ5oFWHabI0bZoVRlrWoWzb9CSBtFMOsQtZwbXrZm5YJgyzrod73I6Gvhr5xd1Ncul0XZHlzgcKpLl9wNlkOpn2vKPueO+3Q+JmtfcuyPiOyj8cQNxDOglUaATVmz4dwORCMIUq3q6FUqNpPFuHSQXtXeQK7UFBf+H6aAiDNpm2nPoSjZWEXQdNr4M5DDo4PBgvSgAFmcnlNBYusgTsOfshlIn5qaawg2y+ULDBYHAlzMwbyE2U/zlkaywjndQ2LBi8+96fzPcJqPGaeyPanZDW3yZQ8JN2+/PcLloFBWFOoXt977jQmjwfhJwcVlHVsCCfr+6hbf8Ajg8gag==
+sidebar_class_name: "get api-method"
+info_path: reference/api-reference/Endpoints/Location Attributes/scalartax
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import Heading from "@theme/Heading";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Fetch Location Attribute"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/scalartax/location_attributes/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Fetch Location Attribute
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<details
+  style={{"marginBottom":"1rem"}}
+  className={"openapi-markdown__details"}
+  data-collapsed={false}
+  open={true}
+>
+  <summary
+    style={{}}
+  >
+    <h3
+      className={"openapi-markdown__details-summary-header-params"}
+    >
+      Path Parameters
+    </h3>
+  </summary><div>
+    <ul>
+      <ParamsItem
+        className={"paramsItem"}
+        param={{"name":"id","in":"path","schema":{"type":"string"},"required":true,"enumDescriptions":[]}}
+      >
+        
+      </ParamsItem>
+    </ul>
+  </div>
+</details><div>
+  <div>
+    <ApiTabs
+      label={undefined}
+      id={undefined}
+    >
+      <TabItem
+        label={"200"}
+        value={"200"}
+      >
+        <div>
+          
+          
+          OK
+          
+          
+        </div><div>
+          <MimeTabs
+            className={"openapi-tabs__mime"}
+            schemaType={"response"}
+          >
+            <TabItem
+              label={"applicaiotn/json"}
+              value={"applicaiotn/json"}
+            >
+              <SchemaTabs
+                className={"openapi-tabs__schema"}
+              >
+                <TabItem
+                  label={"Schema"}
+                  value={"Schema"}
+                >
+                  <details
+                    style={{}}
+                    className={"openapi-markdown__details response"}
+                    data-collapsed={false}
+                    open={true}
+                  >
+                    <summary
+                      style={{}}
+                      className={"openapi-markdown__details-summary-response"}
+                    >
+                      <strong>
+                        Schema
+                      </strong>
+                    </summary><div
+                      style={{"textAlign":"left","marginLeft":"1rem"}}
+                    >
+                      
+                    </div><ul
+                      style={{"marginLeft":"1rem"}}
+                    >
+                      <div
+                        style={{"marginTop":".5rem","marginBottom":".5rem"}}
+                      >
+                        
+                        
+                        object
+                        
+                        
+                      </div>
+                    </ul>
+                  </details>
+                </TabItem><TabItem
+                  label={"Example (from schema)"}
+                  value={"Example (from schema)"}
+                >
+                  <ResponseSamples
+                    responseExample={"{\n  \"id\": \"string\",\n  \"location_id\": \"string\",\n  \"attribute_name\": \"string\",\n  \"attribute_value\": \"string\",\n  \"attribute_unit_of_measure\": \"string\",\n  \"updated_by_id\": \"null | string\",\n  \"created_by_id\": \"null | string\",\n  \"created_at\": \"datetime\",\n  \"updated_at\": \"datetime\"\n}"}
+                    language={"json"}
+                  >
+                    
+                  </ResponseSamples>
+                </TabItem>
+              </SchemaTabs>
+            </TabItem>
+          </MimeTabs>
+        </div>
+      </TabItem><TabItem
+        label={"404"}
+        value={"404"}
+      >
+        <div>
+          
+          
+          Not Found. Location Attribute with that Specific ID not Found.
+          
+          
+        </div><div>
+          <MimeTabs
+            className={"openapi-tabs__mime"}
+            schemaType={"response"}
+          >
+            <TabItem
+              label={"application/json"}
+              value={"application/json"}
+            >
+              <SchemaTabs
+                className={"openapi-tabs__schema"}
+              >
+                <TabItem
+                  label={"Schema"}
+                  value={"Schema"}
+                >
+                  <details
+                    style={{}}
+                    className={"openapi-markdown__details response"}
+                    data-collapsed={false}
+                    open={true}
+                  >
+                    <summary
+                      style={{}}
+                      className={"openapi-markdown__details-summary-response"}
+                    >
+                      <strong>
+                        Schema
+                      </strong>
+                    </summary><div
+                      style={{"textAlign":"left","marginLeft":"1rem"}}
+                    >
+                      
+                    </div><ul
+                      style={{"marginLeft":"1rem"}}
+                    >
+                      <div
+                        style={{"marginTop":".5rem","marginBottom":".5rem"}}
+                      >
+                        
+                        
+                        object
+                        
+                        
+                      </div>
+                    </ul>
+                  </details>
+                </TabItem><TabItem
+                  label={"Example (from schema)"}
+                  value={"Example (from schema)"}
+                >
+                  <ResponseSamples
+                    responseExample={"{\n  \"error\": \"Location Attribute Not Found.\"\n}"}
+                    language={"json"}
+                  >
+                    
+                  </ResponseSamples>
+                </TabItem>
+              </SchemaTabs>
+            </TabItem>
+          </MimeTabs>
+        </div>
+      </TabItem><TabItem
+        label={"500"}
+        value={"500"}
+      >
+        <div>
+          
+          
+          Internal Serval Error.
+          
+          
+        </div><div>
+          
+        </div>
+      </TabItem>
+    </ApiTabs>
+  </div>
+</div>
+      

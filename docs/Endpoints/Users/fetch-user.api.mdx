@@ -1,0 +1,160 @@
+---
+id: fetch-user
+title: "Fetch User"
+description: "This endpoint retrieves information about a specific user within the tenants."
+sidebar_label: "Fetch User"
+hide_title: true
+hide_table_of_contents: true
+api: eJytVNtu20YQ/RVinlpgI5IK1QR8ioH0EjSADV9eKgjGaDkU1yV3N7tD1QLBfy+Gom056iUP4QvJ2TMz5+xcBmDcRSjXcBcpRNgoqCjqYDwbZ6GE28bEhGzlnbGcBOJgaE8xMbZ2oUNBJbh1PSeYRE/a1EYnfaSQ/GW4MTbhhhImi5bjAhR4DNgRS65yPYDFjqAEU4ECI/k8cgMKom6oQygH4IMXRORg7A5GBYG+9CZQBSWHnsaNWKJ3NlIU/DLL5PVaxeXvoEA7y2RZTtH71uiJffoQBTKcp3TbB9IMCugRO9+SHJkKSri7uV5myyLPsiJ/v8pXhV7potLFdquX74o6AwW1CZHvZ3W/9Q+4BQUtvtg+OtpJ6A5NCyVU1Ln8w07+Ftp1oEDucMaeHwbX0v3E5fry82su71HXVU7viAosVrXoDoRM1f32MLnYvm0V9L46Nz4hkaEECfsmz95kxW3+tlzm5apYrH5a/gEvzv+HE5rPt/YNTGe9F1VnLHzdidi231dM8fbbxEy48fgo6IgbJ3p2xFM/cwMlpFFji4HxMZXCxXQw1Sh9TGH/1Ot9kEo3zD6WaYreLObGkqKm+/xM8VVwVa+nETvGgVGdhinTdBi2GOm+D+04pmcBPjuN7bPvRkasdlOHG5bKwM3E+hYfz1yndZBcXH1KPjrdd2R5mhZQIHqOmHyRLbJ5sFBPg/VUwatPyU3vvQtyR68Yn2qORwifDMJs+nACk6FnCl28rG8o7I2mf442YVJBexe5Q3tC6Bdi3SQi6mulw8te+O7Lbl4kTI+c+haNFXLTbQxz46zhuXHmmY+goDSVbOLGRRbIsch3UmMxf+kpHKBcbxTsMRjcSinXA1QmyncFZY1tpP/Q+cP1vEN/TP6N5WxEe5CSY9vLHyj4kw7HfT1uRgUNYUVhyn48uNCaPJ+4nG1aacPnGfr151sYx78BxSolqw==
+sidebar_class_name: "get api-method"
+info_path: reference/api-reference/Endpoints/Users/scalartax
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import Heading from "@theme/Heading";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Fetch User"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/scalartax/users/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+This endpoint retrieves information about a specific user within the tenants.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<details
+  style={{"marginBottom":"1rem"}}
+  className={"openapi-markdown__details"}
+  data-collapsed={false}
+  open={true}
+>
+  <summary
+    style={{}}
+  >
+    <h3
+      className={"openapi-markdown__details-summary-header-params"}
+    >
+      Path Parameters
+    </h3>
+  </summary><div>
+    <ul>
+      <ParamsItem
+        className={"paramsItem"}
+        param={{"name":"id","in":"path","schema":{"type":"string"},"required":true,"enumDescriptions":[]}}
+      >
+        
+      </ParamsItem>
+    </ul>
+  </div>
+</details><div>
+  <div>
+    <ApiTabs
+      label={undefined}
+      id={undefined}
+    >
+      <TabItem
+        label={"200"}
+        value={"200"}
+      >
+        <div>
+          
+          
+          OK
+          
+          
+        </div><div>
+          <MimeTabs
+            className={"openapi-tabs__mime"}
+            schemaType={"response"}
+          >
+            <TabItem
+              label={"application/json"}
+              value={"application/json"}
+            >
+              <SchemaTabs
+                className={"openapi-tabs__schema"}
+              >
+                <TabItem
+                  label={"Schema"}
+                  value={"Schema"}
+                >
+                  <details
+                    style={{}}
+                    className={"openapi-markdown__details response"}
+                    data-collapsed={false}
+                    open={true}
+                  >
+                    <summary
+                      style={{}}
+                      className={"openapi-markdown__details-summary-response"}
+                    >
+                      <strong>
+                        Schema
+                      </strong>
+                    </summary><div
+                      style={{"textAlign":"left","marginLeft":"1rem"}}
+                    >
+                      
+                    </div><ul
+                      style={{"marginLeft":"1rem"}}
+                    >
+                      <div
+                        style={{"marginTop":".5rem","marginBottom":".5rem"}}
+                      >
+                        
+                        
+                        object
+                        
+                        
+                      </div>
+                    </ul>
+                  </details>
+                </TabItem><TabItem
+                  label={"Example (from schema)"}
+                  value={"Example (from schema)"}
+                >
+                  <ResponseSamples
+                    responseExample={"{\n  \"id\": \"USR20241004185154c5c4dc4bbc274f0\",\n  \"first_name\": \"Hujab\",\n  \"last_name\": \"Doeg\",\n  \"email\": \"demo1@gmail.com\",\n  \"username\": \"demo1@gmail.com\",\n  \"role_id\": \"ROL202410041851548acfd1e7ee4a45f\",\n  \"created_by_id\": null,\n  \"updated_by_id\": null,\n  \"created_at\": \"2024-10-04T13:21:54.562Z\",\n  \"updated_at\": \"2024-10-04T13:21:54.562Z\",\n  \"role\": {\n    \"id\": \"ROL202410041851548acfd1e7ee4a45f\",\n    \"name\": \"Admin\",\n    \"description\": \"all\",\n    \"created_by_id\": null,\n    \"updated_by_id\": null,\n    \"created_at\": \"2024-10-04T13:21:54.432Z\",\n    \"updated_at\": \"2024-10-04T13:21:54.432Z\"\n  }\n}"}
+                    language={"json"}
+                  >
+                    
+                  </ResponseSamples>
+                </TabItem>
+              </SchemaTabs>
+            </TabItem>
+          </MimeTabs>
+        </div>
+      </TabItem>
+    </ApiTabs>
+  </div>
+</div>
+      

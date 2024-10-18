@@ -1,0 +1,140 @@
+openapi: 3.0.0
+info:
+  title: ScalarTax
+  description: Users API Documentation
+  version: 1.0.0
+  contact:
+    name: API Support
+    url: http://example.com/supportt
+    email: support@example.com
+  termsOfService: http://example.com/terms/
+servers:
+  - url: https://api.example.com/v1
+    description: Production server
+  - url: http://{{base_url}}/
+    description: Local server
+paths:
+  /scalartax/users/:
+    post:
+      tags:
+        - Users
+      summary: Create User
+      description: This endpoint is used to create a new user within the scalartax.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              # $ref: "#/components/schemas/User"
+        description: Created user object
+        required: true
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - Users
+      summary: List Users
+      description: This endpoint retrieves a list of users associated with the tenants.
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  - id: USR20241004185154c5c4dc4bbc274f0
+                    first_name: Hujab
+                    last_name: Doeg
+                    email: demo1@gmail.com
+                    username: demo1@gmail.com
+                    role_id: ROL202410041851548acfd1e7ee4a45f
+                    created_by_id: null
+                    updated_by_id: null
+                    created_at: '2024-10-04T13:21:54.562Z'
+                    updated_at: '2024-10-04T13:21:54.562Z'
+                    role:
+                      id: ROL202410041851548acfd1e7ee4a45f
+                      name: Admin
+                      description: all
+                      created_by_id: null
+                      updated_by_id: null
+                      created_at: '2024-10-04T13:21:54.432Z'
+                      updated_at: '2024-10-04T13:21:54.432Z'
+  /scalartax/users/{id}:
+    get:
+      tags:
+        - Users
+      summary: Fetch User
+      description: This endpoint retrieves information about a specific user within the tenants.
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  id: USR20241004185154c5c4dc4bbc274f0
+                  first_name: Hujab
+                  last_name: Doeg
+                  email: demo1@gmail.com
+                  username: demo1@gmail.com
+                  role_id: ROL202410041851548acfd1e7ee4a45f
+                  created_by_id: null
+                  updated_by_id: null
+                  created_at: '2024-10-04T13:21:54.562Z'
+                  updated_at: '2024-10-04T13:21:54.562Z'
+                  role:
+                    id: ROL202410041851548acfd1e7ee4a45f
+                    name: Admin
+                    description: all
+                    created_by_id: null
+                    updated_by_id: null
+                    created_at: '2024-10-04T13:21:54.432Z'
+                    updated_at: '2024-10-04T13:21:54.432Z'
+    put:
+      tags:
+        - Users
+      summary: Update User
+      description: This endpoint allows the client to update the details of a specific user.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                first_name: updated User 12333333
+                email: testusjjhker@example.com
+                last_name: doe
+                company: Amazone
+                address: california west
+                account_id: '3'
+                company_id: '1'
+                role_id: ''
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - Users
+      summary: Delete User
+      description: This endpoint is used to delete a specific user from the tenants.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  

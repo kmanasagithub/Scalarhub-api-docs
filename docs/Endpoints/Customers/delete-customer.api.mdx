@@ -1,0 +1,186 @@
+---
+id: delete-customer
+title: "Delete Customer"
+description: "This endpoint is used to delete a specific customer belonging to a scalartax."
+sidebar_label: "Delete Customer"
+hide_title: true
+hide_table_of_contents: true
+api: eJytVEFu2zAQ/AqxpxYQLKdILzw1qF3AaNAEdXoyjIIm1xZTiWTIlWtD0N+LlWTFidOe6ossana4szNkA6R2CeQKPteJfIUxwToDg0lHG8h6BxIeCpsEOhO8dSRsEnVCI8gLgyUSCiVSQG23Vgs9sIgNlt7trNsxTomkVakiqcMEMggqqgqJ95KrBpyqECRYAxlY3i8oKiCDpAusFMgG6BgYkShat4M2g4hPtY1oQFKssV3zSgreJUyM/zCd8uOliruvE3ESOXRuRKq1xpS2dVkemfh6en1Z+c2T+OJrZ84IflsqBBUolifpi5lwIxAy0N4ROmI6FUJptWK6/DExZ3Opzm8eURNkgAdVhRL5E8boI8jRHPHcCrT8y+DjW1oXjjA6VYolxj1GMe94GF4hFd6AhH4CnRtUgIR8tCg/mZjyxpqWnehYerfqWIKEgigkmecq2MnQ70T7Kt9fwev03Edvas0voueBNjunkXneNBuV8Gcdy7bNLwhuvVblWLvmkGx9NzhLPCZYdp0/qMNF6RhqcXO/EDOv6woddUZABqypx11NppPp4JnSnWdDKrluWYfgI1vzoutz3amHdPZVyjJqWPp0BuOEEcYq3W3ZGKvxbbYOkzM6+ESVcmcNzfozd1L2WnLznLv/fm6HoBIeKA+lso477EbSDClawVjA0xyvlAykNXyxFD4Rw3rHf7DhvPxUYzyCXK0z2Kto1YZ9XTVgbOL/BuRWlQn/ofXd9+FKeC/+1umwqNyRvVdlzW+QwS889tdPu24zKFAZjN3u/YcbrTHQWcnFaeZMjudqNr+dP8yhbf8A7mnYvw==
+sidebar_class_name: "delete api-method"
+info_path: reference/api-reference/Endpoints/Customers/scalartax
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import Heading from "@theme/Heading";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete Customer"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/scalartax/customers/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+This endpoint is used to delete a specific customer belonging to a scalartax.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<details
+  style={{"marginBottom":"1rem"}}
+  className={"openapi-markdown__details"}
+  data-collapsed={false}
+  open={true}
+>
+  <summary
+    style={{}}
+  >
+    <h3
+      className={"openapi-markdown__details-summary-header-params"}
+    >
+      Path Parameters
+    </h3>
+  </summary><div>
+    <ul>
+      <ParamsItem
+        className={"paramsItem"}
+        param={{"name":"id","in":"path","schema":{"type":"string"},"required":true,"enumDescriptions":[]}}
+      >
+        
+      </ParamsItem>
+    </ul>
+  </div>
+</details><div>
+  <div>
+    <ApiTabs
+      label={undefined}
+      id={undefined}
+    >
+      <TabItem
+        label={"200"}
+        value={"200"}
+      >
+        <div>
+          
+          
+          OK. Customer deleted successfully
+          
+          
+        </div><div>
+          
+        </div>
+      </TabItem><TabItem
+        label={"404"}
+        value={"404"}
+      >
+        <div>
+          
+          
+          Not Found. Customer with the Specific ID not Found.
+          
+          
+        </div><div>
+          <MimeTabs
+            className={"openapi-tabs__mime"}
+            schemaType={"response"}
+          >
+            <TabItem
+              label={"application/json"}
+              value={"application/json"}
+            >
+              <SchemaTabs
+                className={"openapi-tabs__schema"}
+              >
+                <TabItem
+                  label={"Schema"}
+                  value={"Schema"}
+                >
+                  <details
+                    style={{}}
+                    className={"openapi-markdown__details response"}
+                    data-collapsed={false}
+                    open={true}
+                  >
+                    <summary
+                      style={{}}
+                      className={"openapi-markdown__details-summary-response"}
+                    >
+                      <strong>
+                        Schema
+                      </strong>
+                    </summary><div
+                      style={{"textAlign":"left","marginLeft":"1rem"}}
+                    >
+                      
+                    </div><ul
+                      style={{"marginLeft":"1rem"}}
+                    >
+                      <div
+                        style={{"marginTop":".5rem","marginBottom":".5rem"}}
+                      >
+                        
+                        
+                        object
+                        
+                        
+                      </div>
+                    </ul>
+                  </details>
+                </TabItem><TabItem
+                  label={"Example (from schema)"}
+                  value={"Example (from schema)"}
+                >
+                  <ResponseSamples
+                    responseExample={"{\n  \"error\": \"Customer Not Found.\"\n}"}
+                    language={"json"}
+                  >
+                    
+                  </ResponseSamples>
+                </TabItem>
+              </SchemaTabs>
+            </TabItem>
+          </MimeTabs>
+        </div>
+      </TabItem><TabItem
+        label={"500"}
+        value={"500"}
+      >
+        <div>
+          
+          
+          Internal Server Error
+          
+          
+        </div><div>
+          
+        </div>
+      </TabItem>
+    </ApiTabs>
+  </div>
+</div>
+      

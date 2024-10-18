@@ -1,0 +1,186 @@
+---
+id: delete-s-l-nexus
+title: "Delete S_l_Nexus"
+description: "This endpoint is used to delete a specific nexus for a tenant."
+sidebar_label: "Delete S_l_Nexus"
+hide_title: true
+hide_table_of_contents: true
+api: eJylVEFu2zAQ/AqxpxYQLKdILzw1qF0gaJAEdXoyDIOh1hFTimTIpWtD0N+LlVTbidteqpNEDYezO7NsgdRTArmExdqub3GXEyZYFVBh0tEEMt6BhIfaJIGuCt44EiaJnLAS5EWFFgmFEimgNhujhWMOsfFRKEHolKMJFBBUVA0SRj6rBacaBAmmggIMHxAU1VBA0jU2CmQLtA+MSBSNe4KugIgv2USsQFLM2K14JQXvWK9s4cN0CvJUtbz7OhGfcyLfYBx1ViJlrTGlTbZ2DwVcTi958+tibz2JLz67aiIOTRE/DdWCahSL34Vez4Q7IKEA7R2hI+ZTIVijFfOVz4lJ2/PS/OMzaoICcKeaYJF/YYw+gjyaIY5ioOOngI9c6VvN144wOmXFAuMWo5j3RAxvkGpf9b3hFvReUA0SyqSVVZHUrkxru3aD92Vrqo6d6HkGt3K0IKEmCkmWpQpmMkqeaN+U2wt4G5f76Kus+UMMPNAVpzSyLNv2USVc52i7rjwjuPFa2cPeFYdk4/veGeJOwaLX/qB2Z1tPciyu7q/FzOvcoKPeDSiAqxqQF5PpZDoap3Rv3JhL3rfIIfjI/rzSfVp5GiC9h40yjBqXPp3AOLyEsUl3GzbHaPwzW48pGR18oka5E0GzYcwOtb2tuj2m7/9ndcwn4Y7KYJVxrKlvQjtmZwmH7HBUjumBAqSp+P6ofSIGDj5/Z5t5+SVj3INcrgrYqmjUI7u5bKEyid8rkBtlE/6jvHffxovgvfib1nFROR7xrbKZv6CAH7gfLp1u1RVQo6ow9qcPP660xkAnW87GmJN4mKfZ/Gb+MIeu+wWV0c83
+sidebar_class_name: "delete api-method"
+info_path: reference/api-reference/Endpoints/S_l_Nexuses/scalartax
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import Heading from "@theme/Heading";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete S_l_Nexus"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/scalartax/s_l_nexuses/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+This endpoint is used to delete a specific nexus for a tenant.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<details
+  style={{"marginBottom":"1rem"}}
+  className={"openapi-markdown__details"}
+  data-collapsed={false}
+  open={true}
+>
+  <summary
+    style={{}}
+  >
+    <h3
+      className={"openapi-markdown__details-summary-header-params"}
+    >
+      Path Parameters
+    </h3>
+  </summary><div>
+    <ul>
+      <ParamsItem
+        className={"paramsItem"}
+        param={{"name":"id","in":"path","schema":{"type":"string"},"required":true,"enumDescriptions":[]}}
+      >
+        
+      </ParamsItem>
+    </ul>
+  </div>
+</details><div>
+  <div>
+    <ApiTabs
+      label={undefined}
+      id={undefined}
+    >
+      <TabItem
+        label={"200"}
+        value={"200"}
+      >
+        <div>
+          
+          
+          
+          
+          
+        </div><div>
+          
+        </div>
+      </TabItem><TabItem
+        label={"404"}
+        value={"404"}
+      >
+        <div>
+          
+          
+          Not Found. S_l_Nexus with the Specific ID not Found.
+          
+          
+        </div><div>
+          <MimeTabs
+            className={"openapi-tabs__mime"}
+            schemaType={"response"}
+          >
+            <TabItem
+              label={"application/json"}
+              value={"application/json"}
+            >
+              <SchemaTabs
+                className={"openapi-tabs__schema"}
+              >
+                <TabItem
+                  label={"Schema"}
+                  value={"Schema"}
+                >
+                  <details
+                    style={{}}
+                    className={"openapi-markdown__details response"}
+                    data-collapsed={false}
+                    open={true}
+                  >
+                    <summary
+                      style={{}}
+                      className={"openapi-markdown__details-summary-response"}
+                    >
+                      <strong>
+                        Schema
+                      </strong>
+                    </summary><div
+                      style={{"textAlign":"left","marginLeft":"1rem"}}
+                    >
+                      
+                    </div><ul
+                      style={{"marginLeft":"1rem"}}
+                    >
+                      <div
+                        style={{"marginTop":".5rem","marginBottom":".5rem"}}
+                      >
+                        
+                        
+                        object
+                        
+                        
+                      </div>
+                    </ul>
+                  </details>
+                </TabItem><TabItem
+                  label={"Example (from schema)"}
+                  value={"Example (from schema)"}
+                >
+                  <ResponseSamples
+                    responseExample={"{\n  \"error\": \"S_l_Nexus Not Found.\"\n}"}
+                    language={"json"}
+                  >
+                    
+                  </ResponseSamples>
+                </TabItem>
+              </SchemaTabs>
+            </TabItem>
+          </MimeTabs>
+        </div>
+      </TabItem><TabItem
+        label={"500"}
+        value={"500"}
+      >
+        <div>
+          
+          
+          Internal Server Error
+          
+          
+        </div><div>
+          
+        </div>
+      </TabItem>
+    </ApiTabs>
+  </div>
+</div>
+      

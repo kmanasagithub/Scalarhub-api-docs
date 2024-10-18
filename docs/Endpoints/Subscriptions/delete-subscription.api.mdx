@@ -1,0 +1,186 @@
+---
+id: delete-subscription
+title: "Delete Subscription"
+description: "This endpoint sends an HTTP DELETE request to the specified subscription ID"
+sidebar_label: "Delete Subscription"
+hide_title: true
+hide_table_of_contents: true
+api: eJytVMGO2jAQ/RVrTq0UEbbaXnLqSlAVadVFhZ4Qqow9bLyb2F57sgVF+fdqnIgNsO2pXEKcN8/z5j27BZKPEYoNrJpdVMF4Ms5G2Gag8fQOBaxLEwVa7Z2xJCJaHYW04tt6vRSz+f18PRcBXxqMJMgJKlFEj8rsDWoRR9RiMYMMvAyyRsLAW7dgZY1QgNGQgeHdvKQSMoiqxFpC0QIdPSMiBWMfocuANzMBNRQUGuy2vBK9sxEj4z9Np/w41/DwPBFjmUJjhZQaVApj3DdVdWTy2+ntdfV3R+Kra6y+IPltqEyCV71gJRYzYU9gyEA5S2iJKaX3lVGSC/OnyLzttUq3e0JFkAEeZO0r5E8YggtQnNkk3lqCjn8ZfH5P98ISBisrscLwikHMExfDa6TSaSign0RyhkooII9KVjKQPORj92LeGt2xM4mpd68JFRRQEvlY5Ln0ZjL0PVGuzl9v4DJLy+B0o5KCnge6bExT5Hnb7mTEX02oui6/Irh3Slan2i2HZu/SAA3xuGCVul/Lw1XpWczF3XIhZk41NVpKpkAGrKvH3kymk+ngn1TJvyGpXLdqvHeBbTrrfKw99pBkZS0No4alLyMYJ44w1PFhzwYZhe+zJUzOaO8i1dKOGpol/86CeSm9fcvhfz7NQ2wJD5T7ShrLPaahtEOeNnDKE4fn7KrJoDCaL5zSRWJo7/1Ptp6XXxoMRyg22wxeZTByxw5vWtAm8n8NxV5WEf+h9sOP4bL4KP7W7bAo7ZETIKuG3yCDZzz2F1O37TIoUWoMaff+w51S6GlUcnW+OZ2nU9aPFrruDztX4z8=
+sidebar_class_name: "delete api-method"
+info_path: reference/api-reference/Endpoints/Subscriptions/scalartax
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import Heading from "@theme/Heading";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete Subscription"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/scalartax/subscriptions/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+This endpoint sends an HTTP DELETE request to the specified subscription ID
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<details
+  style={{"marginBottom":"1rem"}}
+  className={"openapi-markdown__details"}
+  data-collapsed={false}
+  open={true}
+>
+  <summary
+    style={{}}
+  >
+    <h3
+      className={"openapi-markdown__details-summary-header-params"}
+    >
+      Path Parameters
+    </h3>
+  </summary><div>
+    <ul>
+      <ParamsItem
+        className={"paramsItem"}
+        param={{"name":"id","in":"path","schema":{"type":"string"},"required":true,"enumDescriptions":[]}}
+      >
+        
+      </ParamsItem>
+    </ul>
+  </div>
+</details><div>
+  <div>
+    <ApiTabs
+      label={undefined}
+      id={undefined}
+    >
+      <TabItem
+        label={"200"}
+        value={"200"}
+      >
+        <div>
+          
+          
+          Ok. Subscription deleted successfully
+          
+          
+        </div><div>
+          
+        </div>
+      </TabItem><TabItem
+        label={"404"}
+        value={"404"}
+      >
+        <div>
+          
+          
+          Not Found. Subscription with the Specific ID not Found.
+          
+          
+        </div><div>
+          <MimeTabs
+            className={"openapi-tabs__mime"}
+            schemaType={"response"}
+          >
+            <TabItem
+              label={"application/json"}
+              value={"application/json"}
+            >
+              <SchemaTabs
+                className={"openapi-tabs__schema"}
+              >
+                <TabItem
+                  label={"Schema"}
+                  value={"Schema"}
+                >
+                  <details
+                    style={{}}
+                    className={"openapi-markdown__details response"}
+                    data-collapsed={false}
+                    open={true}
+                  >
+                    <summary
+                      style={{}}
+                      className={"openapi-markdown__details-summary-response"}
+                    >
+                      <strong>
+                        Schema
+                      </strong>
+                    </summary><div
+                      style={{"textAlign":"left","marginLeft":"1rem"}}
+                    >
+                      
+                    </div><ul
+                      style={{"marginLeft":"1rem"}}
+                    >
+                      <div
+                        style={{"marginTop":".5rem","marginBottom":".5rem"}}
+                      >
+                        
+                        
+                        object
+                        
+                        
+                      </div>
+                    </ul>
+                  </details>
+                </TabItem><TabItem
+                  label={"Example (from schema)"}
+                  value={"Example (from schema)"}
+                >
+                  <ResponseSamples
+                    responseExample={"{\n  \"error\": \"Subscription Not Found.\"\n}"}
+                    language={"json"}
+                  >
+                    
+                  </ResponseSamples>
+                </TabItem>
+              </SchemaTabs>
+            </TabItem>
+          </MimeTabs>
+        </div>
+      </TabItem><TabItem
+        label={"500"}
+        value={"500"}
+      >
+        <div>
+          
+          
+          Internal Server Error
+          
+          
+        </div><div>
+          
+        </div>
+      </TabItem>
+    </ApiTabs>
+  </div>
+</div>
+      

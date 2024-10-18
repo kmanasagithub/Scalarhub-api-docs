@@ -1,0 +1,493 @@
+openapi: 3.0.0
+info:
+  title: ScalarTax
+  description : Locations API Documentation
+  version: 1.0.0
+  contact:
+    name: API Support
+    url: http://example.com/supportt
+    email: support@example.com
+  termsOfService: http://example.com/terms/
+servers:
+  - url: https://api.example.com/v1
+    description: Production server
+  - url: http://{{base_url}}/
+    description: Local server
+paths:
+  /scalartax/locations/:
+    post:
+      tags:
+        - Locations
+      summary: Create Location
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Location"
+        description: Location Object
+        required: true
+      responses:
+        '201':
+          description: Location Created Successfully.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Location"
+                example: 
+                  message: Location Created Successfully.
+                  locations: 
+                    - id: string
+                      location_code: string
+                      entity_id: string
+                      friendly_name: string
+                      description: string
+                      address_type_id: string
+                      address_category_id: string
+                      is_marketplace_outside_usa: boolean
+                      line1: string
+                      line2: string
+                      line3: null or string
+                      city: string
+                      county: string
+                      region: string
+                      postal_code: string
+                      country: string
+                      is_default: boolean
+                      is_registered: boolean
+                      dba_name: string
+                      outlet_name: string
+                      start_date: date
+                      end_date: null or date
+                      is_marketplace_remit_tax: null or boolean
+                      created_by_id: string
+                      updated_by_id: string
+                      created_at: datetime
+                      updated_at: datetime
+                      location_attributes:
+                        - id: string
+                          location_id: string
+                          attribute_name: string
+                          attribute_value: string
+                          attribute_unit_of_measure: string
+                          updated_by_id: string
+                          created_by_id: string
+                          created_at: datetime
+                          updated_at: datetime
+        '422':
+          description:  Unprocessable Entity. Validation errors occurred during the creation.
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  error: Failed to create locations
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+    get:
+      tags:
+        - Locations
+      summary: List Locations
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Location"
+                example:
+                  - id: string
+                    location_code: string
+                    entity_id: string
+                    friendly_name: string
+                    description: string
+                    address_type_id: string
+                    address_category_id: string
+                    is_marketplace_outside_usa: boolean
+                    line1: string
+                    line2: string
+                    line3: null or string
+                    city: string
+                    county: string
+                    region: string
+                    postal_code: string
+                    country: string
+                    is_default: boolean
+                    is_registered: boolean
+                    dba_name: string
+                    outlet_name: string
+                    start_date: date
+                    end_date: null or date
+                    is_marketplace_remit_tax: null or boolean
+                    created_by_id: string
+                    updated_by_id: string
+                    created_at: datetime
+                    updated_at: datetime
+                    location_attributes:
+                      - id: string
+                        location_id: string
+                        attribute_name: string
+                        attribute_value: string
+                        attribute_unit_of_measure: string
+                        updated_by_id: string
+                        created_by_id: string
+                        created_at: datetime
+                        updated_at: datetime                 
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+  /scalartax/locations/{id}:
+    get:
+      tags:
+        - Locations
+      summary: Fetch Location
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Location"
+                example: 
+                  id: string
+                  location_code: string
+                  entity_id: string
+                  friendly_name: string
+                  description: string
+                  address_type_id: integer
+                  address_category_id: integer
+                  is_marketplace_outside_usa: boolean
+                  line1: string
+                  line2: string
+                  line3: null
+                  city: string
+                  county: string
+                  region: string
+                  postal_code: string
+                  country: string
+                  is_default: boolean
+                  is_registered: boolean
+                  dba_name: string
+                  outlet_name: string
+                  start_date: string (date)
+                  end_date: null
+                  is_marketplace_remit_tax: boolean
+                  created_by_id: string
+                  updated_by_id: string
+                  location_attributes:
+                    - attribute_name: string
+                      attribute_value: string
+                      attribute_unit_of_measure: string
+                      created_by_id: string
+                      updated_by_id: string
+        '404':
+          description: Not Found. Location with that Specific ID not Found.
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  error: Location Not Found.
+        '500':
+          description: Internal Serval Error
+    put:
+      tags:
+        - Locations
+      summary: Update Location
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Location"
+        required: true
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: OK. Location Updated Successfully.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Location"
+                example: 
+                  message: Location Updated Successfully.
+                  location:
+                    updated_by_id: string
+                    location_code: string
+                    entity_id: string
+                    friendly_name: string
+                    description: string
+                    address_type_id: string
+                    address_category_id: string
+                    is_marketplace_outside_usa: boolean
+                    line1: string
+                    line2: string
+                    line3: null or string
+                    city: string
+                    county: string
+                    region: string
+                    postal_code: string
+                    country: string
+                    is_default: boolean
+                    is_registered: boolean
+                    dba_name: string
+                    outlet_name: string
+                    start_date: date
+                    end_date: null or date
+                    created_by_id: string
+                    id: string
+                    is_marketplace_remit_tax: null or boolean
+                    created_at: datetime
+                    updated_at: datetime
+                    location_attributes:
+                      - id: string
+                        location_id: string
+                        attribute_name: string
+                        attribute_value: string
+                        attribute_unit_of_measure: string
+                        updated_by_id: string
+                        created_by_id: string
+                        created_at: datetime
+                        updated_at: datetime
+                      - id: string
+                        location_id: string
+                        attribute_name: string
+                        attribute_value: string
+                        attribute_unit_of_measure: string
+                        updated_by_id: string
+                        created_by_id: string
+                        created_at: datetime
+                        updated_at: datetime   
+        '400':
+          description: Bad Request
+        '404':
+          description: Not Found. Location with that Specific ID not Found.
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  error: Location Not Found.
+        '422':
+          description: Unprocessable Entity. Validation errors occurred during the update.
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  errors: Failed to update location      
+        '500':
+          description: Internal Serval Error
+    delete:
+      tags:
+        - Locations
+      summary: Delete Location
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: OK. Location Deleted Successfully.
+        '404':
+          description: Not Found. Location with that Specific ID not Found.
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  error: Location Not Found.
+        '422':
+          description: Unprocessable Entity. Failed to delete the location.
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  error: Failed to delete location
+        '500':
+          description: Internal Server Error
+
+components:
+  schemas:
+    Location:
+      type: object
+      properties:
+        locations:
+          type: array
+          items:
+            type: object
+            properties:
+              location_code:
+                type: string
+                description: Unique code for the location
+                required: true
+              entity_id:
+                type: string
+                description: Unique identifier for the entity associated with the location
+                required: true
+              friendly_name:
+                type: string
+                description: Friendly name for display purposes
+                required: true
+              description:
+                type: string
+                description: Description of the location
+                required: false
+              address_type_id:
+                type: integer
+                description: Identifier for the type of address
+                required: true
+              address_category_id:
+                type: integer
+                description: Identifier for the category of the address
+                required: true
+              is_marketplace_outside_usa:
+                type: boolean
+                description: Indicates if the location is a marketplace outside the USA
+                required: false
+              line1:
+                type: string
+                description: First line of the address
+                required: true
+              line2:
+                type: string
+                description: Second line of the address (optional)
+                required: false
+              line3:
+                type: string
+                description: Third line of the address (optional)
+                nullable: true
+                required: false
+              city:
+                type: string
+                description: City of the location
+                required: true
+              county:
+                type: string
+                description: County of the location
+                required: false
+              region:
+                type: string
+                description: State or region of the location
+                required: true
+              postal_code:
+                type: string
+                description: Postal code of the location
+                required: true
+              country:
+                type: string
+                description: Country of the location
+                required: true
+              is_default:
+                type: boolean
+                description: Indicates if this is the default location
+                required: false
+              is_registered:
+                type: boolean
+                description: Indicates if the location is registered
+                required: false
+              dba_name:
+                type: string
+                description: Doing business as name
+                required: false
+              outlet_name:
+                type: string
+                description: Name of the outlet
+                required: false
+              start_date:
+                type: string
+                format: date
+                description: Date when the location becomes effective
+                required: true
+              end_date:
+                type: string
+                format: date
+                description: Date when the location is no longer effective (optional)
+                nullable: true
+                required: false
+              is_marketplace_remit_tax:
+                type: boolean
+                description: Indicates if the marketplace is responsible for remitting tax
+                required: false
+              created_by_id:
+                type: string
+                description: ID of the user who created the location record
+                required: false
+              updated_by_id:
+                type: string
+                description: ID of the user who last updated the location record
+                required: false
+              location_attributes:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    attribute_name:
+                      type: string
+                      description: Name of the location attribute
+                      required: true
+                    attribute_value:
+                      type: string
+                      description: Value of the location attribute
+                      required: true
+                    attribute_unit_of_measure:
+                      type: string
+                      description: Unit of measure for the attribute value
+                      required: false
+                    created_by_id:
+                      type: string
+                      description: ID of the user who created the attribute record
+                      required: false
+                    updated_by_id:
+                      type: string
+                      description: ID of the user who last updated the attribute record
+                      required: false
+                  required:
+                    - attribute_name
+                    - attribute_value
+                    - attribute_unit_of_measure
+                    - updated_by_id
+                    - created_by_id
+            required:
+              - location_code
+              - entity_id
+              - friendly_name
+              - description
+              - address_type_id
+              - address_category_id
+              - is_marketplace_outside_usa
+              - line1
+              - line2
+              - line3
+              - city
+              - county
+              - region
+              - postal_code
+              - country
+              - is_registered
+              - is_default
+              - dba_name
+              - outlet_name
+              - start_date
+              - end_date
+              - is_marketplace_remit_tax
+              - updated_by_id
+              - created_by_id
+      required:
+        - locations
+        

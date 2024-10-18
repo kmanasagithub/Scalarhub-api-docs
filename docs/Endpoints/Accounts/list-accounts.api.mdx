@@ -1,0 +1,200 @@
+---
+id: list-accounts
+title: "List Accounts"
+description: "This endpoint retrieves a list of scalartax accounts."
+sidebar_label: "List Accounts"
+hide_title: true
+hide_table_of_contents: true
+api: eJydVU2P2zgM/SsCT7uAEU+L7sWnncUWi0ELtNiZngaBwchMotaWNBIdJAj83wvKdsZuPIO2pzji0xM/HskzMO4iFI9wq7VrLUdYZ1BR1MF4Ns5CAQ97ExXZyjtjWQXiYOhAUaGqTWTltipqrDEwHhUOLCvIIFD0zkaKUJzh7c2N/MyZP32ADLSzTJbFit7XRqNY869RIGeIek8NyhefPEEBbvOVNEMGPjhPgU3/gHaNR3sqLTY0QUcOxu7gOiZSghTveU9quA1dBkMIZWTkNv4cVY8dyQYG9QetdqtM3Wo2B8rUncX09ae80kYKP+/qiFZbF6ZPCNPWhMi/EHbCz4IXdmGq8ZeIBL7IQw2aeolj60KDDMWAWCJNFoVVFSjGOXEnknpqTaBKBDsr+FXZJhmepWga5ejpOoNjU0Mx9gBkwIZrmp3QERsvZ49nMNU0qj5jz/9ju7lEVc6hOhAyVeXm9IOh9dWygbZbSqopBQAFyA+bpZBfcEEK8brD0oEBNZeoNXlGq5deu6CYQmNs6tLXYK95/gyy1YI5UjgYTWXql5ceGkEvUFzlZGPq2thdqU+6piUDNqnUBWycqwntb9VrvJFkPvFnvDA/77p114mw3y2Nx3+wUv/TU0sxNfpfS5g7yyLzWt1TOFBQ70Nwfa80xHsnvu0oTUvkPRSQX2Z1Ps7qfEgmhZjU3QbphT2zj0WeozerQfsr7Zr88Oaqbz8HV7Va/qieB7psSlPk+fm8wUhlG+quy68IPjqN9eXuOgNjty4NkKEN75PTD3i8ujquLXX7+U7963TbkOUkGchAQuphb1Y3q5tBeKjTshm6QO7dt967IFmaOT0NO/YQvgyNAoajvycwKZO0R/y0ve/lucyWMLmgvYvcoJ049FGW6mUb/xDv+Xld/vZeHqYy05FzX6OxaR+FNLF7lTzC5ebzmBFfZFTuXWSB9CX9IhWV46eWwgmKx3UGBwwGN2lWrrsM9oQVhSStb3Tqa0ZeMnnAuhVXrva+aOCi3//eP0DXfQeLRQVI
+sidebar_class_name: "get api-method"
+info_path: reference/api-reference/Endpoints/Accounts/scalartax
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import Heading from "@theme/Heading";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"List Accounts"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/scalartax/accounts/"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+This endpoint retrieves a list of scalartax accounts.
+
+<div>
+  <div>
+    <ApiTabs
+      label={undefined}
+      id={undefined}
+    >
+      <TabItem
+        label={"200"}
+        value={"200"}
+      >
+        <div>
+          
+          
+          OK
+          
+          
+        </div><div>
+          <MimeTabs
+            className={"openapi-tabs__mime"}
+            schemaType={"response"}
+          >
+            <TabItem
+              label={"application/json"}
+              value={"application/json"}
+            >
+              <SchemaTabs
+                className={"openapi-tabs__schema"}
+              >
+                <TabItem
+                  label={"Schema"}
+                  value={"Schema"}
+                >
+                  <details
+                    style={{}}
+                    className={"openapi-markdown__details response"}
+                    data-collapsed={false}
+                    open={true}
+                  >
+                    <summary
+                      style={{}}
+                      className={"openapi-markdown__details-summary-response"}
+                    >
+                      <strong>
+                        Schema
+                      </strong>
+                    </summary><div
+                      style={{"textAlign":"left","marginLeft":"1rem"}}
+                    >
+                      
+                    </div><ul
+                      style={{"marginLeft":"1rem"}}
+                    >
+                      <SchemaItem
+                        collapsible={false}
+                        name={"company_name"}
+                        required={true}
+                        schemaName={"string"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"string","description":"The name of the company"}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"account_status"}
+                        required={true}
+                        schemaName={"string"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"string","description":"The status of the account (e.g., Active, Inactive)"}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"username"}
+                        required={true}
+                        schemaName={"string"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"string","description":"The username for the account"}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"first_name"}
+                        required={true}
+                        schemaName={"string"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"string","description":"The first name of the user"}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"last_name"}
+                        required={true}
+                        schemaName={"string"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"string","description":"The last name of the user"}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"email"}
+                        required={true}
+                        schemaName={"email"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"string","format":"email","description":"The email address of the user"}}
+                      >
+                        
+                      </SchemaItem>
+                    </ul>
+                  </details>
+                </TabItem><TabItem
+                  label={"Example (from schema)"}
+                  value={"Example (from schema)"}
+                >
+                  <ResponseSamples
+                    responseExample={"[\n  {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"subscription_id\": \"string\",\n    \"created_by_id\": \"string\",\n    \"updated_by_id\": \"string\",\n    \"effective_date\": \"datetime\",\n    \"account_status\": \"string\",\n    \"subscription\": {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"contract_acceptance_date\": \"datetime\",\n      \"contract_termination_date\": \"datetime\",\n      \"contract_effective_date\": \"datetime\",\n      \"contract_end_date\": \"datetime\",\n      \"service_activation_date\": \"datetime\",\n      \"service_end_date\": \"datetime\",\n      \"status\": \"string\",\n      \"billing_cycle\": \"string\",\n      \"billing_amount\": \"boolean\",\n      \"created_by_id\": \"string\",\n      \"updated_by_id\": \"string\",\n      \"created_at\": \"datetime\",\n      \"updated_at\": \"datetime\"\n    }\n  }\n]"}
+                    language={"json"}
+                  >
+                    
+                  </ResponseSamples>
+                </TabItem>
+              </SchemaTabs>
+            </TabItem>
+          </MimeTabs>
+        </div>
+      </TabItem><TabItem
+        label={"400"}
+        value={"400"}
+      >
+        <div>
+          
+          
+          Bad Request
+          
+          
+        </div><div>
+          
+        </div>
+      </TabItem><TabItem
+        label={"500"}
+        value={"500"}
+      >
+        <div>
+          
+          
+          Internal Server Error
+          
+          
+        </div><div>
+          
+        </div>
+      </TabItem>
+    </ApiTabs>
+  </div>
+</div>
+      

@@ -1,0 +1,511 @@
+openapi: 3.0.0
+info:
+  title: ScalarTax
+  description : Customers API Documentation
+  version: 1.0.0
+  contact:
+    name: API Support
+    url: http://example.com/supportt
+    email: support@example.com
+  termsOfService: http://example.com/terms/
+servers:
+  - url: https://api.example.com/v1
+    description: Production server
+  - url: http://{{base_url}}/
+    description: Local server
+paths:
+  /scalartax/customers:
+    post:
+      tags:
+        - Customers
+      summary: Create Customer
+      description: This endpoint allows you to add a new customer to the scalartax.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schema/Customer"
+        description: Customer object
+        required: true
+      responses:
+        '201':
+          description: Customer Created successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Customer"
+                example: 
+                  id: string
+                  customer_name: string
+                  external_customer_id: string
+                  contact_id: string
+                  address_id: string
+                  tax_exemption_status: boolean
+                  customer_code: string
+                  alternate_id: string
+                  taxpayer_id: string
+                  last_transaction: datetime
+                  customer_labels: string
+                  exposure_zones: string
+                  created_by_id: string
+                  updated_by_id: string
+                  created_at: datetime
+                  updated_at: datetime
+                  external_address:
+                    id: string
+                    address_line1: string
+                    address_line2: string
+                    city: string
+                    address_string: string
+                    state: string
+                    zip_code: string
+                    country: string
+                    created_at: datetime
+                    updated_at: datetime
+                  contact:
+                    id: string
+                    name: string
+                    address_id: null or string
+                    email: string
+                    phone: string
+                    fax_number: string
+                    contact_type: string
+                    created_at: datetime
+                    updated_at: datetime
+                  tax_exemption:
+                    id: string
+                    customer_id: string
+                    effective_date: datetime
+                    exemption_reason: string
+                    created_at: datetime
+                    updated_at: datetime
+        '422':
+          description:  Unprocessable Entity. Validation errors occurred during the creation.
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  errors: [ Customer name can't be blank,Taxpayer ID must be unique ]
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+    get:
+      tags:
+        - Customers
+      summary: List Customers
+      description: This endpoint retrieves a list of customers associated with scalartax.
+      responses:
+        '200':
+          description: OK            
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Customer"
+                example:
+                - id: string
+                  customer_name: string
+                  external_customer_id: null or string
+                  contact_id: string
+                  address_id: string
+                  tax_exemption_status: null or boolean
+                  customer_code: string
+                  alternate_id: string
+                  taxpayer_id: string
+                  last_transaction: null or datetime
+                  customer_labels: string
+                  exposure_zones: null or string
+                  created_by_id: string
+                  updated_by_id: string
+                  created_at: datetime
+                  updated_at: datetime
+                  external_address:
+                    id: string
+                    address_line1: string
+                    address_line2: string
+                    city: string
+                    address_string: null or string
+                    state: string
+                    zip_code: string
+                    country: string
+                    created_at: datetime
+                    updated_at: datetime
+                  contact:
+                    id: string
+                    name: string
+                    address_id: null or string
+                    email: string
+                    phone: string
+                    fax_number: string
+                    contact_type: null or string
+                    created_at: datetime
+                    updated_at: datetime
+                  tax_exemption:
+                    id: string
+                    customer_id: string
+                    effective_date: null or datetime
+                    exemption_reason: string
+                    created_at: datetime
+                    updated_at: datetime
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+  /scalartax/customers/{id}:
+    get:
+      tags:
+        - Customers
+      summary: Fetch Customer
+      description: This endpoint retrieves the details of a specific scalartax customer.
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Customer"
+                example:
+                  id: string
+                  customer_name: string
+                  external_customer_id: null or string
+                  contact_id: string
+                  address_id: string
+                  tax_exemption_status: null or boolean
+                  customer_code: string
+                  alternate_id: string
+                  taxpayer_id: string
+                  last_transaction: null or datetime
+                  customer_labels: string
+                  exposure_zones: null or string
+                  created_by_id: string
+                  updated_by_id: string
+                  created_at: datetime
+                  updated_at: datetime
+                  external_address:
+                    id: string
+                    address_line1: string
+                    address_line2: string
+                    city: string
+                    address_string: null or string
+                    state: string
+                    zip_code: string
+                    country: string
+                    created_at: datetime
+                    updated_at: datetime
+                  contact:
+                    id: string
+                    name: string
+                    address_id: null or string
+                    email: string
+                    phone: string
+                    fax_number: string
+                    contact_type: null or string
+                    created_at: datetime
+                    updated_at: datetime
+                  tax_exemption:
+                    id: string
+                    customer_id: string
+                    effective_date: null or datetime
+                    exemption_reason: string
+                    created_at: datetime
+                    updated_at: datetime
+        '404':
+          description: Not Found. Customer with that Specific ID not Found.
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  error: Customer Not Found.
+        '500':
+          description: Internal Serval Error.
+           
+    put:
+      tags:
+        - Customers
+      summary: Update Customer
+      description: This endpoint allows you to update the details of a specific customer.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schema/Customer"
+        required: true
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: OK. Customer Updated Successfully.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Customer"
+                example: 
+                  customer_name: string
+                  external_customer_id: string
+                  contact_id: string
+                  address_id: string
+                  tax_exemption_status: boolean
+                  customer_code: string
+                  alternate_id: string
+                  taxpayer_id: string
+                  last_transaction: datetime
+                  customer_labels: string
+                  exposure_zones: string
+                  created_by_id: string
+                  updated_by_id: string
+                  id: string
+                  created_at: datetime
+                  updated_at: datetime
+                  external_address:
+                    address_line1: string
+                    address_line2: string
+                    city: string
+                    address_string: string
+                    state: string
+                    zip_code: string
+                    country: string
+                    id: string
+                    created_at: datetime
+                    updated_at: datetime
+                  contact:
+                    name: string
+                    address_id: null or string
+                    email: string
+                    phone: string
+                    fax_number: string
+                    contact_type: string
+                    id: string
+                    created_at: datetime
+                    updated_at: datetime
+                  tax_exemption:
+                    customer_id: string
+                    effective_date: datetime
+                    exemption_reason: string
+                    id: string
+                    created_at: datetime
+                    updated_at: datetime
+
+        '400':
+          description: Bad Request
+        '404':
+          description: Not Found.Customer with that Specific ID not Found.
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  error: Customer Not Found.
+        '422':
+          description: Unprocessable Entity. Validation errors occurred during the update.
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  errors: [Contact phone number is invalid]      
+        '500':
+          description: Internal Serval Error
+    delete:
+      tags:
+        - Customers
+      summary: Delete Customer
+      description: This endpoint is used to delete a specific customer belonging to a scalartax.
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: OK. Customer deleted successfully
+        '404':
+          description: Not Found. Customer with the Specific ID not Found.
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  error: Customer Not Found.
+        '500':
+          description: Internal Server Error
+components:
+  schema:
+    Customer:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the customer
+        customer_name:
+          type: string
+          description: The name of the customer
+        external_customer_id:
+          type: string
+          description: External identifier for the customer
+        contact_id:
+          type: string
+          description: Unique identifier for the contact
+        address_id:
+          type: string
+          description: Unique identifier for the address
+        tax_exemption_status:
+          type: boolean
+          description: Indicates if the customer has a tax exemption
+        customer_code:
+          type: string
+          description: Internal code for the customer
+        alternate_id:
+          type: string
+          description: Alternate identifier for the customer
+        taxpayer_id:
+          type: string
+          description: Taxpayer identifier
+        last_transaction:
+          type: string
+          format: date-time
+          description: Date and time of the last transaction
+        customer_labels:
+          type: string
+          description: Labels associated with the customer
+        exposure_zones:
+          type: string
+          description: Exposure zone of the customer
+        created_by_id:
+          type: string
+          description: ID of the user who created the customer
+        updated_by_id:
+          type: string
+          description: ID of the user who last updated the customer
+        created_at:
+          type: string
+          format: date-time
+          description: Timestamp when the customer was created
+        updated_at:
+          type: string
+          format: date-time
+          description: Timestamp when the customer was last updated
+        external_address:
+          type: object
+          properties:
+            id:
+              type: string
+              description: Unique identifier for the address
+            address_line1:
+              type: string
+              description: First line of the address
+            address_line2:
+              type: string
+              description: Second line of the address (optional)
+            city:
+              type: string
+              description: City of the address
+            address_string:
+              type: string
+              description: Full address string
+            state:
+              type: string
+              description: State of the address
+            zip_code:
+              type: string
+              description: ZIP code of the address
+            country:
+              type: string
+              description: Country of the address
+            created_at:
+              type: string
+              format: date-time
+              description: Timestamp when the address was created
+            updated_at:
+              type: string
+              format: date-time
+              description: Timestamp when the address was last updated
+        contact:
+          type: object
+          properties:
+            id:
+              type: string
+              description: Unique identifier for the contact
+            name:
+              type: string
+              description: Name of the contact
+            address_id:
+              type: string
+              description: Address ID of the contact (can be null)
+            email:
+              type: string
+              format: email
+              description: Email address of the contact
+            phone:
+              type: string
+              description: Phone number of the contact
+            fax_number:
+              type: string
+              description: Fax number of the contact
+            contact_type:
+              type: string
+              description: Type of contact (e.g., Individual, Business)
+            created_at:
+              type: string
+              format: date-time
+              description: Timestamp when the contact was created
+            updated_at:
+              type: string
+              format: date-time
+              description: Timestamp when the contact was last updated
+        tax_exemption:
+          type: object
+          properties:
+            id:
+              type: string
+              description: Unique identifier for the tax exemption
+            customer_id:
+              type: string
+              description: ID of the customer associated with the tax exemption
+            effective_date:
+              type: string
+              format: date-time
+              description: Effective date of the tax exemption
+            exemption_reason:
+              type: string
+              description: Reason for the tax exemption
+            created_at:
+              type: string
+              format: date-time
+              description: Timestamp when the tax exemption was created
+            updated_at:
+              type: string
+              format: date-time
+              description: Timestamp when the tax exemption was last updated
+      required:
+        - id
+        - customer_name
+        - external_customer_id
+        - contact_id
+        - address_id
+        - tax_exemption_status
+        - customer_code
+        - alternate_id
+        - taxpayer_id
+        - last_transaction
+        - customer_labels
+        - exposure_zones
+        - created_by_id
+        - updated_by_id
+        - created_at
+        - updated_at
+        - external_address
+        - contact
+        - tax_exemption

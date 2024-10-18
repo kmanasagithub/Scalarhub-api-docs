@@ -1,0 +1,910 @@
+openapi: 3.0.0
+info:
+  title: ScalarTax
+  description: >-
+    # ScalarTax API Documentation
+
+
+    ## Overview
+
+
+    The ScalarTax API provides a comprehensive set of endpoints to manage
+    customers, accounts, users, products, transactions, companies, and nexuses.
+    This documentation outlines the available endpoints and the corresponding
+    CRUD operations, helping developers integrate and interact with the service
+    efficiently.
+
+
+    ## Endpoints
+
+
+    | Resource | Method | Endpoint | Description | Status Codes |
+
+    | --- | --- | --- | --- | --- |
+
+    | **Customers** | GET | `/customers` | Retrieve a list of customers | 200
+    OK, 500 Internal Server Error |
+
+    |  | POST | `/customers` | Create a new customer | 201 Created, 400 Bad
+    Request, 500 Internal Server Error |
+
+    |  | GET | `/customers/:id` | Retrieve a single customer | 200 OK, 404 Not
+    Found, 500 Internal Server Error |
+
+    |  | PUT | `/customers/:id` | Update an existing customer | 200 OK, 400 Bad
+    Request, 404 Not Found, 500 Internal Server Error |
+
+    |  | DELETE | `/customers/:id` | Delete a customer | 204 No Content, 404 Not
+    Found, 500 Internal Server Error |
+
+    | **Accounts** | GET | `/accounts` | Retrieve a list of accounts | 200 OK,
+    500 Internal Server Error |
+
+    |  | POST | `/accounts` | Create a new account | 201 Created, 400 Bad
+    Request, 500 Internal Server Error |
+
+    |  | GET | `/accounts/:id` | Retrieve a single account | 200 OK, 404 Not
+    Found, 500 Internal Server Error |
+
+    |  | PUT | `/accounts/:id` | Update an existing account | 200 OK, 400 Bad
+    Request, 404 Not Found, 500 Internal Server Error |
+
+    |  | DELETE | `/accounts/:id` | Delete an account | 204 No Content, 404 Not
+    Found, 500 Internal Server Error |
+
+    | **Users** | GET | `/users` | Retrieve a list of users | 200 OK, 500
+    Internal Server Error |
+
+    |  | POST | `/users` | Create a new user | 201 Created, 400 Bad Request, 500
+    Internal Server Error |
+
+    |  | GET | `/users/:id` | Retrieve a single user | 200 OK, 404 Not Found,
+    500 Internal Server Error |
+
+    |  | PUT | `/users/:id` | Update an existing user | 200 OK, 400 Bad Request,
+    404 Not Found, 500 Internal Server Error |
+
+    |  | DELETE | `/users/:id` | Delete a user | 204 No Content, 404 Not Found,
+    500 Internal Server Error |
+
+    | **Products** | GET | `/products` | Retrieve a list of products | 200 OK,
+    500 Internal Server Error |
+
+    |  | POST | `/products` | Create a new product | 201 Created, 400 Bad
+    Request, 500 Internal Server Error |
+
+    |  | GET | `/products/:id` | Retrieve a single product | 200 OK, 404 Not
+    Found, 500 Internal Server Error |
+
+    |  | PUT | `/products/:id` | Update an existing product | 200 OK, 400 Bad
+    Request, 404 Not Found, 500 Internal Server Error |
+
+    |  | DELETE | `/products/:id` | Delete a product | 204 No Content, 404 Not
+    Found, 500 Internal Server Error |
+
+    | **Transactions** | GET | `/transactions` | Retrieve a list of transactions
+    | 200 OK, 500 Internal Server Error |
+
+    |  | POST | `/transactions` | Create a new transaction | 201 Created, 400
+    Bad Request, 500 Internal Server Error |
+
+    |  | GET | `/transactions/:id` | Retrieve a single transaction | 200 OK, 404
+    Not Found, 500 Internal Server Error |
+
+    |  | PUT | `/transactions/:id` | Update an existing transaction | 200 OK,
+    400 Bad Request, 404 Not Found, 500 Internal Server Error |
+
+    |  | DELETE | `/transactions/:id` | Delete a transaction | 204 No Content,
+    404 Not Found, 500 Internal Server Error |
+
+    | **Companies** | GET | `/companies` | Retrieve a list of companies | 200
+    OK, 500 Internal Server Error |
+
+    |  | POST | `/companies` | Create a new company | 201 Created, 400 Bad
+    Request, 500 Internal Server Error |
+
+    |  | GET | `/companies/:id` | Retrieve a single company | 200 OK, 404 Not
+    Found, 500 Internal Server Error |
+
+    |  | PUT | `/companies/:id` | Update an existing company | 200 OK, 400 Bad
+    Request, 404 Not Found, 500 Internal Server Error |
+
+    |  | DELETE | `/companies/:id` | Delete a company | 204 No Content, 404 Not
+    Found, 500 Internal Server Error |
+
+    | **Nexuses** | GET | `/nexuses` | Retrieve a list of nexuses | 200 OK, 500
+    Internal Server Error |
+
+    |  | POST | `/nexuses` | Create a new nexus | 201 Created, 400 Bad Request,
+    500 Internal Server Error |
+
+    |  | GET | `/nexuses/:id` | Retrieve a single nexus | 200 OK, 404 Not Found,
+    500 Internal Server Error |
+
+    |  | PUT | `/nexuses/:id` | Update an existing nexus | 200 OK, 400 Bad
+    Request, 404 Not Found, 500 Internal Server Error |
+
+    |  | DELETE | `/nexuses/:id` | Delete a nexus | 204 No Content, 404 Not
+    Found, 500 Internal Server Error |
+
+
+    ## Status Codes
+
+
+    | Status Code | Description |
+
+    | --- | --- |
+
+    | **200 OK** | The request was successful. |
+
+    | **201 Created** | The resource was created successfully. |
+
+    | **204 No Content** | The resource was deleted successfully. |
+
+    | **400 Bad Request** | The request was invalid or cannot be served. |
+
+    | **404 Not Found** | The requested resource could not be found. |
+
+    | **500 Internal Server Error** | An error occurred on the server. |
+
+    | **503 Service Unavailable** | The server is currently unavailable
+    (overloaded or down). |
+
+
+    ## Detailed Status Code Descriptions
+
+
+    ### HTTP 200 OK
+
+
+    The request was successfully processed by the server. The response will
+    contain the requested data.
+
+
+    ### HTTP 201 Created
+
+
+    The request was successful and resulted in the creation of a new resource.
+    The response will include a location header pointing to the new resource.
+
+
+    ### HTTP 204 No Content
+
+
+    The request was successful, but there is no content to send in the response.
+    This is typically used for successful deletions.
+
+
+    ### HTTP 400 Bad Request
+
+
+    The server could not understand the request due to invalid syntax. The
+    client should not repeat the request without modifications.
+
+
+    ### HTTP 404 Not Found
+
+
+    The server can not find the requested resource. This can also be returned
+    when the server does not want to reveal exactly why the request has been
+    refused, or no other response is applicable.
+
+
+    ### HTTP 500 Internal Server Error
+
+
+    The server encountered an unexpected condition that prevented it from
+    fulfilling the request. This is a generic error message for unexpected
+    conditions.
+
+
+    ### HTTP 503 Service Unavailable
+
+
+    An HTTP 503 response from our servers indicates there is an unexpected spike
+    in API access traffic. The server is usually operational within the next
+    five minutes. If the outage persists or you receive any other form of an
+    HTTP 5XX error, contact support.
+
+
+    ## Need Some Help?
+
+
+    If you have questions or need help, refer to the following resources:
+
+
+    - **Tutorials**: [ScalarHub YouTube
+    Channel](https://www.youtube.com/@scalarhub)
+        
+    - **FAQ Page**: [ScalarHub FAQ Page](https://scalarhub.ai/faqs/)
+        
+    - **Help & Support**: [ScalarHub Help &amp; Support
+    Page](https://scalarhub.ai/scalarhub-support-center/)
+        
+    - **Discussion Forum & Blogs**: [ScalarHub
+    Blogs](https://scalarhub.ai/blogs/)
+        
+    - **Developer Forum**: Visit our [developer
+    forum](https://scalarhub.ai/blogs/) to review topics, ask questions, and
+    learn from others.
+        
+
+    ### Additional Resources
+
+
+    - **Libraries and Code Examples**: \[Link to libraries and code examples\]
+        
+    - **Making a Request**: \[Link to resources on making a request\]
+        
+
+    This documentation provides a clear and structured overview of the ScalarTax
+    API, making it easier for developers to integrate and interact with the
+    service.
+  version: 1.0.0
+  contact:
+    name: API Support
+    url: http://example.com/supportt
+    email: support@example.com
+  termsOfService: http://example.com/terms/
+servers:
+  - url: https://api.example.com/v1
+    description: Production server
+  - url: http://{{base_url}}/
+    description: Local server
+paths:
+  /scalartax/accounts/:
+    post:
+      tags:
+        - Accounts
+      summary: Post Account
+      description: This endpoint allows you to create a new tenant accounts.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Account"
+        description: Created user object
+        required: true
+      responses:
+        '201':
+          description: Created  
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                id: 10
+                name: Test Account xxx
+                subscription: 0
+                createdby_id: null
+                updatedby_id: null
+                created_at: '2024-06-19T08:32:03.203Z'
+                updated_at: '2024-06-19T08:32:03.203Z'
+    get:
+      tags:
+        - Accounts
+      summary: Get Accounts
+      description: This endpoint retrieves a list of tenant accounts.
+      responses:
+        '200':
+          description: OK    
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                - id: ACC20241004183648519939b6db2044b
+                  name: scalarhubio
+                  subscription_id: SUB20241004183648c01fa780b4184f1
+                  created_by_id: USR2024100418364856b383bf1b774eb
+                  updated_by_id: USR2024100418364856b383bf1b774eb
+                  effective_date: '2024-10-04T13:06:48.000Z'
+                  account_status: Trial
+                  subscription:
+                    id: SUB20241004183648c01fa780b4184f1
+                    name: trial
+                    contract_acceptance_date: '2024-10-04T13:06:48.408Z'
+                    contract_termination_date: '2024-10-11T13:06:48.408Z'
+                    contract_effective_date: '2024-10-04T13:06:48.408Z'
+                    contract_end_date: '2024-10-11T13:06:48.408Z'
+                    service_activation_date: '2024-10-04T13:06:48.408Z'
+                    service_end_date: '2024-10-11T13:06:48.408Z'
+                    status: Active
+                    billing_cycle: Monthly
+                    billing_amount: true
+                    created_by_id: USR2024100418364856b383bf1b774eb
+                    updated_by_id: USR2024100418364856b383bf1b774eb
+                    created_at: '2024-10-04T13:06:48.545Z'
+                    updated_at: '2024-10-04T13:06:48.545Z'
+  /scalartax/accounts/{id}:
+    get:
+      tags:
+        - Accounts
+      summary: Get Account
+      description: This endpoint retrieves the details of a specific tenant account.
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                id: ACC20241004183648519939b6db2044b
+                name: scalarhubio
+                subscription_id: SUB20241004183648c01fa780b4184f1
+                created_by_id: USR2024100418364856b383bf1b774eb
+                updated_by_id: USR2024100418364856b383bf1b774eb
+                effective_date: '2024-10-04T13:06:48.000Z'
+                account_status: Trial
+                subscription:
+                  id: SUB20241004183648c01fa780b4184f1
+                  name: trial
+                  contract_acceptance_date: '2024-10-04T13:06:48.408Z'
+                  contract_termination_date: '2024-10-11T13:06:48.408Z'
+                  contract_effective_date: '2024-10-04T13:06:48.408Z'
+                  contract_end_date: '2024-10-11T13:06:48.408Z'
+                  service_activation_date: '2024-10-04T13:06:48.408Z'
+                  service_end_date: '2024-10-11T13:06:48.408Z'
+                  status: Active
+                  billing_cycle: Monthly
+                  billing_amount: true
+                  created_by_id: USR2024100418364856b383bf1b774eb
+                  updated_by_id: USR2024100418364856b383bf1b774eb
+                  created_at: '2024-10-04T13:06:48.545Z'
+                  updated_at: '2024-10-04T13:06:48.545Z'
+  /scalartax/users/:
+    post:
+      tags:
+        - Users
+      summary: Create User
+      description: This endpoint is used to create a new user within the tenants.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              # $ref: "#/components/schemas/User"
+        description: Created user object
+        required: true
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - Users
+      summary: Get Users
+      description: This endpoint retrieves a list of users associated with the tenants.
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                - id: USR20241004185154c5c4dc4bbc274f0
+                  first_name: Hujab
+                  last_name: Doeg
+                  email: demo1@gmail.com
+                  username: demo1@gmail.com
+                  role_id: ROL202410041851548acfd1e7ee4a45f
+                  created_by_id: null
+                  updated_by_id: null
+                  created_at: '2024-10-04T13:21:54.562Z'
+                  updated_at: '2024-10-04T13:21:54.562Z'
+                  role:
+                    id: ROL202410041851548acfd1e7ee4a45f
+                    name: Admin
+                    description: all
+                    created_by_id: null
+                    updated_by_id: null
+                    created_at: '2024-10-04T13:21:54.432Z'
+                    updated_at: '2024-10-04T13:21:54.432Z'
+  /scalartax/users/{id}:
+    get:
+      tags:
+        - Users
+      summary: Get User
+      description: This endpoint retrieves information about a specific user within the tenants.
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                id: USR20241004185154c5c4dc4bbc274f0
+                first_name: Hujab
+                last_name: Doeg
+                email: demo1@gmail.com
+                username: demo1@gmail.com
+                role_id: ROL202410041851548acfd1e7ee4a45f
+                created_by_id: null
+                updated_by_id: null
+                created_at: '2024-10-04T13:21:54.562Z'
+                updated_at: '2024-10-04T13:21:54.562Z'
+                role:
+                  id: ROL202410041851548acfd1e7ee4a45f
+                  name: Admin
+                  description: all
+                  created_by_id: null
+                  updated_by_id: null
+                  created_at: '2024-10-04T13:21:54.432Z'
+                  updated_at: '2024-10-04T13:21:54.432Z'
+    put:
+      tags:
+        - Users
+      summary: Update User
+      description: This endpoint allows the client to update the details of a specific user.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                first_name: updated User 12333333
+                email: testusjjhker@example.com
+                last_name: doe
+                company: Amazone
+                address: california west
+                account_id: '3'
+                company_id: '1'
+                role_id: ''
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - Users
+      summary: Delete User
+      description: This endpoint is used to delete a specific user from the tenants.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /scalartax/customers:
+    get:
+      tags:
+        - Customers
+      summary: Get Customers
+      description: This endpoint retrieves a list of customers associated with tenants.
+      responses:
+        '200':
+          description: OK            
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                - id: CMR20241005172254d8f6cad2a8e946b
+                  customer_name: User1
+                  external_customer_id: null
+                  contact_id: CNT20241005172254055cff4ee5a3421
+                  address_id: EAD202410051722546efe8ce8fed6428
+                  tax_exemption_status: null
+                  customer_code: '123'
+                  alternate_id: ''
+                  taxpayer_id: ''
+                  last_transaction: null
+                  customer_labels: CONTRACTOR
+                  exposure_zones: null
+                  created_by_id: USR2024100418364856b383bf1b774eb
+                  updated_by_id: USR2024100418364856b383bf1b774eb
+                  created_at: '2024-10-05T11:52:54.674Z'
+                  updated_at: '2024-10-05T11:52:54.674Z'
+                  external_address:
+                    id: EAD202410051722546efe8ce8fed6428
+                    address_line1: ghfhgf hfhfg
+                    address_line2: ''
+                    city: scnjk
+                    address_string: null
+                    state: Alaska
+                    zip_code: '45678'
+                    country: USA
+                    created_at: '2024-10-05T11:52:54.419Z'
+                    updated_at: '2024-10-05T11:52:54.419Z'
+                  contact:
+                    id: CNT20241005172254055cff4ee5a3421
+                    name: user1
+                    address_id: null
+                    email: user1@gmail.com
+                    phone: ''
+                    fax_number: ''
+                    contact_type: null
+                    created_at: '2024-10-05T11:52:54.503Z'
+                    updated_at: '2024-10-05T11:52:54.503Z'
+                  tax_exemption:
+                    id: TEX202410051722540f4ef79184064df
+                    customer_id: CMR20241005172254d8f6cad2a8e946b
+                    effective_date: null
+                    exemption_reason: Alaska
+                    created_at: '2024-10-05T11:52:54.783Z'
+                    updated_at: '2024-10-05T11:52:54.783Z'
+    post:
+      tags:
+        - Customers
+      summary: Post Customer
+      description: This endpoint allows you to add a new customer to the scalartax.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Customer"
+        description: Created user object
+        required: true
+      responses:
+        '201':
+          description: Created
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: "{\r\n    \"id\": \"CMR2024100613180558f7e9ee28e74fb\",\r\n    \"customer_name\": \"Jane Smith\",\r\n    \"external_customer_id\": \"EXT54321\",\r\n    \"contact_id\": \"CNT20241006131805686976a3fba24cb\",\r\n    \"address_id\": \"EAD202410061318051585bc882480426\",\r\n    \"tax_exemption_status\": true,\r\n    \"customer_code\": \"CUST789\",\r\n    \"alternate_id\": \"ALT78901\",\r\n    \"taxpayer_id\": \"TAX567890\",\r\n    \"last_transaction\": \"2024-09-25T14:20:00.000Z\",\r\n    \"customer_labels\": \"EXTERNAL CUSTOMER\",\r\n    \"exposure_zones\": \"Zone B\",\r\n    \"created_by_id\": \"USR2024100418364856b383bf1b774eb\",\r\n    \"updated_by_id\": \"USR2024100418364856b383bf1b774eb\",\r\n    \"created_at\": \"2024-10-06T07:48:05.972Z\",\r\n    \"updated_at\": \"2024-10-06T07:48:05.972Z\",\r\n    \"external_address\": {\r\n        \"id\": \"EAD202410061318051585bc882480426\",\r\n        \"address_line1\": \"456 Elm St\",\r\n        \"address_line2\": \"Suite 12\",\r\n        \"city\": \"San Francisco\",\r\n        \"address_string\": \"456 Elm St, Suite 12, San Francisco, California, 94101, USA\",\r\n        \"state\": \"California\",\r\n        \"zip_code\": \"94101\",\r\n        \"country\": \"USA\",\r\n        \"created_at\": \"2024-10-06T07:48:05.911Z\",\r\n        \"updated_at\": \"2024-10-06T07:48:05.911Z\"\r\n    },\r\n    \"contact\": {\r\n        \"id\": \"CNT20241006131805686976a3fba24cb\",\r\n        \"name\": \"Emily Clark\",\r\n        \"address_id\": null,\r\n        \"email\": \"emilyclark@example.com\",\r\n        \"phone\": \"9876543210\",\r\n        \"fax_number\": \"0123456789\",\r\n        \"contact_type\": \"Individual\",\r\n        \"created_at\": \"2024-10-06T07:48:05.956Z\",\r\n        \"updated_at\": \"2024-10-06T07:48:05.956Z\"\r\n    },\r\n    \"tax_exemption\": {\r\n        \"id\": \"TEX2024100613180552153d8f7b74457\",\r\n        \"customer_id\": \"CMR2024100613180558f7e9ee28e74fb\",\r\n        \"effective_date\": \"2024-07-01T00:00:00.000Z\",\r\n        \"exemption_reason\": \"Non-profit Organization\",\r\n        \"created_at\": \"2024-10-06T07:48:05.995Z\",\r\n        \"updated_at\": \"2024-10-06T07:48:05.995Z\"\r\n    }\r\n}"
+  /scalartax/customers/{id}:
+    get:
+      tags:
+        - Customers
+      summary: Get Customer
+      description: This endpoint retrieves the details of a specific tenant customer.
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                id: CMR20241005172254d8f6cad2a8e946b
+                customer_name: User1
+                external_customer_id: null
+                contact_id: CNT20241005172254055cff4ee5a3421
+                address_id: EAD202410051722546efe8ce8fed6428
+                tax_exemption_status: null
+                customer_code: '123'
+                alternate_id: ''
+                taxpayer_id: ''
+                last_transaction: null
+                customer_labels: CONTRACTOR
+                exposure_zones: null
+                created_by_id: USR2024100418364856b383bf1b774eb
+                updated_by_id: USR2024100418364856b383bf1b774eb
+                created_at: '2024-10-05T11:52:54.674Z'
+                updated_at: '2024-10-05T11:52:54.674Z'
+                external_address:
+                  id: EAD202410051722546efe8ce8fed6428
+                  address_line1: ghfhgf hfhfg
+                  address_line2: ''
+                  city: scnjk
+                  address_string: null
+                  state: Alaska
+                  zip_code: '45678'
+                  country: USA
+                  created_at: '2024-10-05T11:52:54.419Z'
+                  updated_at: '2024-10-05T11:52:54.419Z'
+                contact:
+                  id: CNT20241005172254055cff4ee5a3421
+                  name: user1
+                  address_id: null
+                  email: user1@gmail.com
+                  phone: ''
+                  fax_number: ''
+                  contact_type: null
+                  created_at: '2024-10-05T11:52:54.503Z'
+                  updated_at: '2024-10-05T11:52:54.503Z'
+                tax_exemption:
+                  id: TEX202410051722540f4ef79184064df
+                  customer_id: CMR20241005172254d8f6cad2a8e946b
+                  effective_date: null
+                  exemption_reason: Alaska
+                  created_at: '2024-10-05T11:52:54.783Z'
+                  updated_at: '2024-10-05T11:52:54.783Z'
+    put:
+      tags:
+        - Customers
+      summary: Update Customer
+      description: This endpoint allows you to update the details of a specific customer.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                customer:
+                  customer_name: Updated Test User1
+                  external_customer_id: NEW_EXT12346
+                  contact_id: CNT202410051756483b66b3b1523a46d
+                  address_id: EAD20241005175648701f1e8c86fc446
+                  tax_exemption_status: active
+                  customer_code: NEWCODE456
+                  alternate_id: NEWALT63286
+                  taxpayer_id: TAX390274
+                  last_transaction: '2024-10-05T15:30:00Z'
+                  customer_labels: UPDATED LABEL
+                  exposure_zones: Zone C
+                  created_by_id: USR2024100418364856b383bf1b774eb
+                  updated_by_id: USR2024100418364856b383bf1b774eb
+                  tax_exemption:
+                    effective_date: '2024-05-01'
+                    exemption_reason: Updated Reason
+                  contact:
+                    name: Updated Tset User1 Name
+                    address_id: null
+                    email: updateduser1.email@example.com
+                    phone: '9876543210'
+                    fax_number: '1234567890'
+                    contact_type: Individual
+                  external_address:
+                    address_line1: 789 Oak St
+                    address_line2: Suite 202
+                    city: San Diego
+                    state: California
+                    zip_code: '92101'
+                    country: USA
+                    address_string: 789 Oak St, Suite 202, San Diego, California, 92101, USA
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: "{\r\n    \"customer_name\": \"Updated Test User1\",\r\n    \"external_customer_id\": \"NEW_EXT12346\",\r\n    \"contact_id\": \"CNT202410051756483b66b3b1523a46d\",\r\n    \"address_id\": \"EAD20241005175648701f1e8c86fc446\",\r\n    \"tax_exemption_status\": true,\r\n    \"customer_code\": \"NEWCODE456\",\r\n    \"alternate_id\": \"NEWALT63286\",\r\n    \"taxpayer_id\": \"TAX390274\",\r\n    \"last_transaction\": \"2024-10-05T15:30:00.000Z\",\r\n    \"customer_labels\": \"UPDATED LABEL\",\r\n    \"exposure_zones\": \"Zone C\",\r\n    \"created_by_id\": \"USR2024100418364856b383bf1b774eb\",\r\n    \"updated_by_id\": \"USR2024100418364856b383bf1b774eb\",\r\n    \"id\": \"CMR202410051756486bd52a11032d43e\",\r\n    \"created_at\": \"2024-10-05T12:26:48.939Z\",\r\n    \"updated_at\": \"2024-10-06T08:11:16.297Z\",\r\n    \"external_address\": {\r\n        \"address_line1\": \"789 Oak St\",\r\n        \"address_line2\": \"Suite 202\",\r\n        \"city\": \"San Diego\",\r\n        \"address_string\": \"789 Oak St, Suite 202, San Diego, California, 92101, USA\",\r\n        \"state\": \"California\",\r\n        \"zip_code\": \"92101\",\r\n        \"country\": \"USA\",\r\n        \"id\": \"EAD20241005175648701f1e8c86fc446\",\r\n        \"created_at\": \"2024-10-05T12:26:48.903Z\",\r\n        \"updated_at\": \"2024-10-06T08:10:47.352Z\"\r\n    },\r\n    \"contact\": {\r\n        \"name\": \"Updated Tset User1 Name\",\r\n        \"address_id\": null,\r\n        \"email\": \"updateduser1.email@example.com\",\r\n        \"phone\": \"9876543210\",\r\n        \"fax_number\": \"1234567890\",\r\n        \"contact_type\": \"Individual\",\r\n        \"id\": \"CNT202410051756483b66b3b1523a46d\",\r\n        \"created_at\": \"2024-10-05T12:26:48.924Z\",\r\n        \"updated_at\": \"2024-10-06T08:10:47.374Z\"\r\n    },\r\n    \"tax_exemption\": {\r\n        \"customer_id\": \"CMR202410051756486bd52a11032d43e\",\r\n        \"effective_date\": \"2024-05-01T00:00:00.000Z\",\r\n        \"exemption_reason\": \"Updated Reason\",\r\n        \"id\": \"TEX202410051756482326866397be474\",\r\n        \"created_at\": \"2024-10-05T12:26:48.960Z\",\r\n        \"updated_at\": \"2024-10-06T08:10:47.401Z\"\r\n    }\r\n}"
+    delete:
+      tags:
+        - Customers
+      summary: Delete Customer
+      description: This endpoint is used to delete a specific customer belonging to a tenant.
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: "{\r\n    \"message\": \"Customer deleted successfully\"\r\n}"
+components:
+  schemas:
+    Account:
+      type: object
+      properties:
+        company_name:
+          type: string
+          description: The name of the company
+        account_status:
+          type: string
+          description: The status of the account (e.g., Active, Inactive)
+        username:
+          type: string
+          description: The username for the account
+        first_name:
+          type: string
+          description: The first name of the user
+        last_name:
+          type: string
+          description: The last name of the user
+        email:
+          type: string
+          format: email
+          description: The email address of the user
+      required:
+        - company_name
+        - account_status
+        - username
+        - first_name
+        - last_name
+        - email
+      xml:
+        Account
+    Customer:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the customer
+        customer_name:
+          type: string
+          description: The name of the customer
+        external_customer_id:
+          type: string
+          description: External identifier for the customer
+        contact_id:
+          type: string
+          description: Unique identifier for the contact
+        address_id:
+          type: string
+          description: Unique identifier for the address
+        tax_exemption_status:
+          type: boolean
+          description: Indicates if the customer has a tax exemption
+        customer_code:
+          type: string
+          description: Internal code for the customer
+        alternate_id:
+          type: string
+          description: Alternate identifier for the customer
+        taxpayer_id:
+          type: string
+          description: Taxpayer identifier
+        last_transaction:
+          type: string
+          format: date-time
+          description: Date and time of the last transaction
+        customer_labels:
+          type: string
+          description: Labels associated with the customer
+        exposure_zones:
+          type: string
+          description: Exposure zone of the customer
+        created_by_id:
+          type: string
+          description: ID of the user who created the customer
+        updated_by_id:
+          type: string
+          description: ID of the user who last updated the customer
+        created_at:
+          type: string
+          format: date-time
+          description: Timestamp when the customer was created
+        updated_at:
+          type: string
+          format: date-time
+          description: Timestamp when the customer was last updated
+        external_address:
+          type: object
+          properties:
+            id:
+              type: string
+              description: Unique identifier for the address
+            address_line1:
+              type: string
+              description: First line of the address
+            address_line2:
+              type: string
+              description: Second line of the address (optional)
+            city:
+              type: string
+              description: City of the address
+            address_string:
+              type: string
+              description: Full address string
+            state:
+              type: string
+              description: State of the address
+            zip_code:
+              type: string
+              description: ZIP code of the address
+            country:
+              type: string
+              description: Country of the address
+            created_at:
+              type: string
+              format: date-time
+              description: Timestamp when the address was created
+            updated_at:
+              type: string
+              format: date-time
+              description: Timestamp when the address was last updated
+        contact:
+          type: object
+          properties:
+            id:
+              type: string
+              description: Unique identifier for the contact
+            name:
+              type: string
+              description: Name of the contact
+            address_id:
+              type: string
+              description: Address ID of the contact (can be null)
+            email:
+              type: string
+              format: email
+              description: Email address of the contact
+            phone:
+              type: string
+              description: Phone number of the contact
+            fax_number:
+              type: string
+              description: Fax number of the contact
+            contact_type:
+              type: string
+              description: Type of contact (e.g., Individual, Business)
+            created_at:
+              type: string
+              format: date-time
+              description: Timestamp when the contact was created
+            updated_at:
+              type: string
+              format: date-time
+              description: Timestamp when the contact was last updated
+        tax_exemption:
+          type: object
+          properties:
+            id:
+              type: string
+              description: Unique identifier for the tax exemption
+            customer_id:
+              type: string
+              description: ID of the customer associated with the tax exemption
+            effective_date:
+              type: string
+              format: date-time
+              description: Effective date of the tax exemption
+            exemption_reason:
+              type: string
+              description: Reason for the tax exemption
+            created_at:
+              type: string
+              format: date-time
+              description: Timestamp when the tax exemption was created
+            updated_at:
+              type: string
+              format: date-time
+              description: Timestamp when the tax exemption was last updated
+      required:
+        - id
+        - customer_name
+        - external_customer_id
+        - contact_id
+        - address_id
+        - tax_exemption_status
+        - customer_code
+        - alternate_id
+        - taxpayer_id
+        - last_transaction
+        - customer_labels
+        - exposure_zones
+        - created_by_id
+        - updated_by_id
+        - created_at
+        - updated_at
+        - external_address
+        - contact
+        - tax_exemption
+
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer     
+    
+
+
+            

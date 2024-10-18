@@ -1,0 +1,815 @@
+---
+id: update-entity
+title: "Update Entity"
+description: "Update the details of an existing entity using their unique ID. Fields that can be updated include name, tax_id, phone, and address."
+sidebar_label: "Update Entity"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "put api-method"
+info_path: reference/api-reference/Endpoints/Entities/scalartax
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import Heading from "@theme/Heading";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Update Entity"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"put"}
+  path={"/scalartax/entities/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Update the details of an existing entity using their unique ID. Fields that can be updated include name, tax_id, phone, and address.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<details
+  style={{"marginBottom":"1rem"}}
+  className={"openapi-markdown__details"}
+  data-collapsed={false}
+  open={true}
+>
+  <summary
+    style={{}}
+  >
+    <h3
+      className={"openapi-markdown__details-summary-header-params"}
+    >
+      Path Parameters
+    </h3>
+  </summary><div>
+    <ul>
+      <ParamsItem
+        className={"paramsItem"}
+        param={{"name":"id","in":"path","schema":{"type":"string"},"required":true,"enumDescriptions":[]}}
+      >
+        
+      </ParamsItem>
+    </ul>
+  </div>
+</details><MimeTabs
+  className={"openapi-tabs__mime"}
+>
+  <TabItem
+    label={"application/json"}
+    value={"application/json-schema"}
+  >
+    <details
+      style={{}}
+      className={"openapi-markdown__details mime"}
+      data-collapsed={false}
+      open={true}
+    >
+      <summary
+        style={{}}
+        className={"openapi-markdown__details-summary-mime"}
+      >
+        <h3
+          className={"openapi-markdown__details-summary-header-body"}
+        >
+          Body
+        </h3><strong
+          className={"openapi-schema__required"}
+        >
+          required
+        </strong>
+      </summary><div
+        style={{"textAlign":"left","marginLeft":"1rem"}}
+      >
+        
+      </div><ul
+        style={{"marginLeft":"1rem"}}
+      >
+        <SchemaItem
+          collapsible={false}
+          name={"name"}
+          required={true}
+          schemaName={"string"}
+          qualifierMessage={undefined}
+          schema={{"type":"string","description":"Name of the entity"}}
+        >
+          
+        </SchemaItem><SchemaItem
+          collapsible={false}
+          name={"address_id"}
+          required={false}
+          schemaName={"string"}
+          qualifierMessage={undefined}
+          schema={{"type":"string","description":"Unique identifier for the address (optional)"}}
+        >
+          
+        </SchemaItem><SchemaItem
+          collapsible={false}
+          name={"guid"}
+          required={true}
+          schemaName={"string"}
+          qualifierMessage={undefined}
+          schema={{"type":"string","description":"Globally unique identifier for the entity"}}
+        >
+          
+        </SchemaItem><SchemaItem
+          collapsible={false}
+          name={"tax_id"}
+          required={true}
+          schemaName={"string"}
+          qualifierMessage={undefined}
+          schema={{"type":"string","description":"Tax identification number for the entity"}}
+        >
+          
+        </SchemaItem><SchemaItem
+          collapsible={false}
+          name={"phone"}
+          required={false}
+          schemaName={"string"}
+          qualifierMessage={undefined}
+          schema={{"type":"string","description":"Phone number of the entity (nullable)"}}
+        >
+          
+        </SchemaItem><SchemaItem
+          collapsible={false}
+          name={"is_online_marketplace"}
+          required={false}
+          schemaName={"string"}
+          qualifierMessage={undefined}
+          schema={{"type":"string","description":"Indicates if the entity operates as an online marketplace (e.g., Yes, No)"}}
+        >
+          
+        </SchemaItem><SchemaItem
+          collapsible={false}
+          name={"registration_date"}
+          required={true}
+          schemaName={"date"}
+          qualifierMessage={undefined}
+          schema={{"type":"string","format":"date","description":"Date of registration for the entity"}}
+        >
+          
+        </SchemaItem><SchemaItem
+          collapsible={false}
+          name={"tax_exemptions_type"}
+          required={false}
+          schemaName={"string"}
+          qualifierMessage={undefined}
+          schema={{"type":"string","description":"Type of tax exemptions applicable to the entity"}}
+        >
+          
+        </SchemaItem><SchemaItem
+          collapsible={false}
+          name={"is_default"}
+          required={true}
+          schemaName={"boolean"}
+          qualifierMessage={undefined}
+          schema={{"type":"boolean","description":"Indicates if this is the default entity"}}
+        >
+          
+        </SchemaItem><SchemaItem
+          collapsible={false}
+          name={"created_by_id"}
+          required={true}
+          schemaName={"string"}
+          qualifierMessage={undefined}
+          schema={{"type":"string","description":"ID of the user who created the entity record (nullable)"}}
+        >
+          
+        </SchemaItem><SchemaItem
+          collapsible={false}
+          name={"updated_by_id"}
+          required={true}
+          schemaName={"string"}
+          qualifierMessage={undefined}
+          schema={{"type":"string","description":"ID of the user who last updated the entity record (nullable)"}}
+        >
+          
+        </SchemaItem><SchemaItem
+          collapsible={true}
+          className={"schemaItem"}
+        >
+          <details
+            style={{}}
+            className={"openapi-markdown__details"}
+          >
+            <summary
+              style={{}}
+            >
+              <span
+                className={"openapi-schema__container"}
+              >
+                <strong
+                  className={"openapi-schema__property"}
+                >
+                  address
+                </strong><span
+                  className={"openapi-schema__name"}
+                >
+                   object
+                </span>
+              </span>
+            </summary><div
+              style={{"marginLeft":"1rem"}}
+            >
+              <SchemaItem
+                collapsible={false}
+                name={"location_code"}
+                required={true}
+                schemaName={"string"}
+                qualifierMessage={undefined}
+                schema={{"type":"string","description":"Code representing the location"}}
+              >
+                
+              </SchemaItem><SchemaItem
+                collapsible={false}
+                name={"address_type_id"}
+                required={true}
+                schemaName={"string"}
+                qualifierMessage={undefined}
+                schema={{"type":"string","description":"Identifier for the type of address (e.g., location)"}}
+              >
+                
+              </SchemaItem><SchemaItem
+                collapsible={false}
+                name={"line1"}
+                required={true}
+                schemaName={"string"}
+                qualifierMessage={undefined}
+                schema={{"type":"string","description":"First line of the address"}}
+              >
+                
+              </SchemaItem><SchemaItem
+                collapsible={false}
+                name={"line2"}
+                required={true}
+                schemaName={"string"}
+                qualifierMessage={undefined}
+                schema={{"type":"string","description":"Second line of the address (optional)"}}
+              >
+                
+              </SchemaItem><SchemaItem
+                collapsible={false}
+                name={"city"}
+                required={true}
+                schemaName={"string"}
+                qualifierMessage={undefined}
+                schema={{"type":"string","description":"City of the address"}}
+              >
+                
+              </SchemaItem><SchemaItem
+                collapsible={false}
+                name={"region"}
+                required={true}
+                schemaName={"string"}
+                qualifierMessage={undefined}
+                schema={{"type":"string","description":"State or region of the address"}}
+              >
+                
+              </SchemaItem><SchemaItem
+                collapsible={false}
+                name={"country"}
+                required={true}
+                schemaName={"string"}
+                qualifierMessage={undefined}
+                schema={{"type":"string","description":"Country of the address"}}
+              >
+                
+              </SchemaItem><SchemaItem
+                collapsible={false}
+                name={"postal_code"}
+                required={true}
+                schemaName={"string"}
+                qualifierMessage={undefined}
+                schema={{"type":"string","description":"Postal code of the address"}}
+              >
+                
+              </SchemaItem><SchemaItem
+                collapsible={false}
+                name={"start_date"}
+                required={true}
+                schemaName={"date"}
+                qualifierMessage={undefined}
+                schema={{"type":"string","format":"date","description":"Date when the address becomes effective"}}
+              >
+                
+              </SchemaItem><SchemaItem
+                collapsible={false}
+                name={"created_by_id"}
+                required={true}
+                schemaName={"string"}
+                qualifierMessage={undefined}
+                schema={{"type":"string","description":"ID of the user who created the address record (nullable)"}}
+              >
+                
+              </SchemaItem><SchemaItem
+                collapsible={false}
+                name={"updated_by_id"}
+                required={true}
+                schemaName={"string"}
+                qualifierMessage={undefined}
+                schema={{"type":"string","description":"ID of the user who last updated the address record (nullable)"}}
+              >
+                
+              </SchemaItem>
+            </div>
+          </details>
+        </SchemaItem>
+      </ul>
+    </details>
+  </TabItem>
+</MimeTabs><div>
+  <div>
+    <ApiTabs
+      label={undefined}
+      id={undefined}
+    >
+      <TabItem
+        label={"200"}
+        value={"200"}
+      >
+        <div>
+          
+          
+          OK. Entity Updated Successfully
+          
+          
+        </div><div>
+          <MimeTabs
+            className={"openapi-tabs__mime"}
+            schemaType={"response"}
+          >
+            <TabItem
+              label={"application/json"}
+              value={"application/json"}
+            >
+              <SchemaTabs
+                className={"openapi-tabs__schema"}
+              >
+                <TabItem
+                  label={"Schema"}
+                  value={"Schema"}
+                >
+                  <details
+                    style={{}}
+                    className={"openapi-markdown__details response"}
+                    data-collapsed={false}
+                    open={true}
+                  >
+                    <summary
+                      style={{}}
+                      className={"openapi-markdown__details-summary-response"}
+                    >
+                      <strong>
+                        Schema
+                      </strong>
+                    </summary><div
+                      style={{"textAlign":"left","marginLeft":"1rem"}}
+                    >
+                      
+                    </div><ul
+                      style={{"marginLeft":"1rem"}}
+                    >
+                      <SchemaItem
+                        collapsible={false}
+                        name={"name"}
+                        required={true}
+                        schemaName={"string"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"string","description":"Name of the entity"}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"address_id"}
+                        required={false}
+                        schemaName={"string"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"string","description":"Unique identifier for the address (optional)"}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"guid"}
+                        required={true}
+                        schemaName={"string"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"string","description":"Globally unique identifier for the entity"}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"tax_id"}
+                        required={true}
+                        schemaName={"string"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"string","description":"Tax identification number for the entity"}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"phone"}
+                        required={false}
+                        schemaName={"string"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"string","description":"Phone number of the entity (nullable)"}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"is_online_marketplace"}
+                        required={false}
+                        schemaName={"string"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"string","description":"Indicates if the entity operates as an online marketplace (e.g., Yes, No)"}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"registration_date"}
+                        required={true}
+                        schemaName={"date"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"string","format":"date","description":"Date of registration for the entity"}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"tax_exemptions_type"}
+                        required={false}
+                        schemaName={"string"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"string","description":"Type of tax exemptions applicable to the entity"}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"is_default"}
+                        required={true}
+                        schemaName={"boolean"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"boolean","description":"Indicates if this is the default entity"}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"created_by_id"}
+                        required={true}
+                        schemaName={"string"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"string","description":"ID of the user who created the entity record (nullable)"}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"updated_by_id"}
+                        required={true}
+                        schemaName={"string"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"string","description":"ID of the user who last updated the entity record (nullable)"}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={true}
+                        className={"schemaItem"}
+                      >
+                        <details
+                          style={{}}
+                          className={"openapi-markdown__details"}
+                        >
+                          <summary
+                            style={{}}
+                          >
+                            <span
+                              className={"openapi-schema__container"}
+                            >
+                              <strong
+                                className={"openapi-schema__property"}
+                              >
+                                address
+                              </strong><span
+                                className={"openapi-schema__name"}
+                              >
+                                 object
+                              </span>
+                            </span>
+                          </summary><div
+                            style={{"marginLeft":"1rem"}}
+                          >
+                            <SchemaItem
+                              collapsible={false}
+                              name={"location_code"}
+                              required={true}
+                              schemaName={"string"}
+                              qualifierMessage={undefined}
+                              schema={{"type":"string","description":"Code representing the location"}}
+                            >
+                              
+                            </SchemaItem><SchemaItem
+                              collapsible={false}
+                              name={"address_type_id"}
+                              required={true}
+                              schemaName={"string"}
+                              qualifierMessage={undefined}
+                              schema={{"type":"string","description":"Identifier for the type of address (e.g., location)"}}
+                            >
+                              
+                            </SchemaItem><SchemaItem
+                              collapsible={false}
+                              name={"line1"}
+                              required={true}
+                              schemaName={"string"}
+                              qualifierMessage={undefined}
+                              schema={{"type":"string","description":"First line of the address"}}
+                            >
+                              
+                            </SchemaItem><SchemaItem
+                              collapsible={false}
+                              name={"line2"}
+                              required={true}
+                              schemaName={"string"}
+                              qualifierMessage={undefined}
+                              schema={{"type":"string","description":"Second line of the address (optional)"}}
+                            >
+                              
+                            </SchemaItem><SchemaItem
+                              collapsible={false}
+                              name={"city"}
+                              required={true}
+                              schemaName={"string"}
+                              qualifierMessage={undefined}
+                              schema={{"type":"string","description":"City of the address"}}
+                            >
+                              
+                            </SchemaItem><SchemaItem
+                              collapsible={false}
+                              name={"region"}
+                              required={true}
+                              schemaName={"string"}
+                              qualifierMessage={undefined}
+                              schema={{"type":"string","description":"State or region of the address"}}
+                            >
+                              
+                            </SchemaItem><SchemaItem
+                              collapsible={false}
+                              name={"country"}
+                              required={true}
+                              schemaName={"string"}
+                              qualifierMessage={undefined}
+                              schema={{"type":"string","description":"Country of the address"}}
+                            >
+                              
+                            </SchemaItem><SchemaItem
+                              collapsible={false}
+                              name={"postal_code"}
+                              required={true}
+                              schemaName={"string"}
+                              qualifierMessage={undefined}
+                              schema={{"type":"string","description":"Postal code of the address"}}
+                            >
+                              
+                            </SchemaItem><SchemaItem
+                              collapsible={false}
+                              name={"start_date"}
+                              required={true}
+                              schemaName={"date"}
+                              qualifierMessage={undefined}
+                              schema={{"type":"string","format":"date","description":"Date when the address becomes effective"}}
+                            >
+                              
+                            </SchemaItem><SchemaItem
+                              collapsible={false}
+                              name={"created_by_id"}
+                              required={true}
+                              schemaName={"string"}
+                              qualifierMessage={undefined}
+                              schema={{"type":"string","description":"ID of the user who created the address record (nullable)"}}
+                            >
+                              
+                            </SchemaItem><SchemaItem
+                              collapsible={false}
+                              name={"updated_by_id"}
+                              required={true}
+                              schemaName={"string"}
+                              qualifierMessage={undefined}
+                              schema={{"type":"string","description":"ID of the user who last updated the address record (nullable)"}}
+                            >
+                              
+                            </SchemaItem>
+                          </div>
+                        </details>
+                      </SchemaItem>
+                    </ul>
+                  </details>
+                </TabItem><TabItem
+                  label={"Example (from schema)"}
+                  value={"Example (from schema)"}
+                >
+                  <ResponseSamples
+                    responseExample={"{\n  \"name\": \"string\",\n  \"guid\": \"string\",\n  \"tax_id\": \"string\",\n  \"phone\": \"string\",\n  \"is_online_marketplace\": \"boolean\",\n  \"registration_date\": \"datetime\",\n  \"tax_exemptions_type\": \"string\",\n  \"is_default\": \"boolean\",\n  \"created_by_id\": \"null or string\",\n  \"updated_by_id\": \"null or string\",\n  \"id\": \"string\",\n  \"parent_entity_id\": \"null or string\",\n  \"created_at\": \"datetime\",\n  \"updated_at\": \"datetime\"\n}"}
+                    language={"json"}
+                  >
+                    
+                  </ResponseSamples>
+                </TabItem>
+              </SchemaTabs>
+            </TabItem>
+          </MimeTabs>
+        </div>
+      </TabItem><TabItem
+        label={"400"}
+        value={"400"}
+      >
+        <div>
+          
+          
+          Bad Request
+          
+          
+        </div><div>
+          
+        </div>
+      </TabItem><TabItem
+        label={"404"}
+        value={"404"}
+      >
+        <div>
+          
+          
+          Not Found. Entity with that Specific ID not Found.
+          
+          
+        </div><div>
+          <MimeTabs
+            className={"openapi-tabs__mime"}
+            schemaType={"response"}
+          >
+            <TabItem
+              label={"application/json"}
+              value={"application/json"}
+            >
+              <SchemaTabs
+                className={"openapi-tabs__schema"}
+              >
+                <TabItem
+                  label={"Schema"}
+                  value={"Schema"}
+                >
+                  <details
+                    style={{}}
+                    className={"openapi-markdown__details response"}
+                    data-collapsed={false}
+                    open={true}
+                  >
+                    <summary
+                      style={{}}
+                      className={"openapi-markdown__details-summary-response"}
+                    >
+                      <strong>
+                        Schema
+                      </strong>
+                    </summary><div
+                      style={{"textAlign":"left","marginLeft":"1rem"}}
+                    >
+                      
+                    </div><ul
+                      style={{"marginLeft":"1rem"}}
+                    >
+                      <div
+                        style={{"marginTop":".5rem","marginBottom":".5rem"}}
+                      >
+                        
+                        
+                        object
+                        
+                        
+                      </div>
+                    </ul>
+                  </details>
+                </TabItem><TabItem
+                  label={"Example (from schema)"}
+                  value={"Example (from schema)"}
+                >
+                  <ResponseSamples
+                    responseExample={"{\n  \"error\": \"Entity Not Found.\"\n}"}
+                    language={"json"}
+                  >
+                    
+                  </ResponseSamples>
+                </TabItem>
+              </SchemaTabs>
+            </TabItem>
+          </MimeTabs>
+        </div>
+      </TabItem><TabItem
+        label={"422"}
+        value={"422"}
+      >
+        <div>
+          
+          
+          Unprocessable Entity. Validation errors occurred during the update.
+          
+          
+        </div><div>
+          <MimeTabs
+            className={"openapi-tabs__mime"}
+            schemaType={"response"}
+          >
+            <TabItem
+              label={"application/json"}
+              value={"application/json"}
+            >
+              <SchemaTabs
+                className={"openapi-tabs__schema"}
+              >
+                <TabItem
+                  label={"Schema"}
+                  value={"Schema"}
+                >
+                  <details
+                    style={{}}
+                    className={"openapi-markdown__details response"}
+                    data-collapsed={false}
+                    open={true}
+                  >
+                    <summary
+                      style={{}}
+                      className={"openapi-markdown__details-summary-response"}
+                    >
+                      <strong>
+                        Schema
+                      </strong>
+                    </summary><div
+                      style={{"textAlign":"left","marginLeft":"1rem"}}
+                    >
+                      
+                    </div><ul
+                      style={{"marginLeft":"1rem"}}
+                    >
+                      <div
+                        style={{"marginTop":".5rem","marginBottom":".5rem"}}
+                      >
+                        
+                        
+                        object
+                        
+                        
+                      </div>
+                    </ul>
+                  </details>
+                </TabItem><TabItem
+                  label={"Example (from schema)"}
+                  value={"Example (from schema)"}
+                >
+                  <ResponseSamples
+                    responseExample={"{\n  \"errors\": [\n    \"Phone number is invalid\"\n  ]\n}"}
+                    language={"json"}
+                  >
+                    
+                  </ResponseSamples>
+                </TabItem>
+              </SchemaTabs>
+            </TabItem>
+          </MimeTabs>
+        </div>
+      </TabItem><TabItem
+        label={"500"}
+        value={"500"}
+      >
+        <div>
+          
+          
+          Internal Server Error
+          
+          
+        </div><div>
+          
+        </div>
+      </TabItem>
+    </ApiTabs>
+  </div>
+</div>
+      

@@ -1,0 +1,335 @@
+openapi: 3.0.0
+info:
+  title: ScalarTax
+  description : Entitiess API Documentation
+  version: 1.0.0
+  contact:
+    name: API Support
+    url: http://example.com/supportt
+    email: support@example.com
+  termsOfService: http://example.com/terms/
+servers:
+  - url: https://api.example.com/v1
+    description: Production server
+  - url: http://{{base_url}}/
+    description: Local server
+paths:
+  /scalartax/entities/:
+    post:
+      tags:
+        - Entities
+      summary: Create Entity
+      dscription: Create a new entity by providing necessary details such as name, address, phone and tax_id.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Entity"
+        description: Entity object
+        required: true
+      security:
+        - bearerAuth: []
+      responses:
+        '201':
+          description: Entity Created Successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Entity"
+                example:
+                  entity: 
+                    guid: string
+                    name: string
+                    tax_id: string
+                    phone: null or string
+                    is_online_marketplace: string
+                    registration_date: date
+                    tax_exemptions_type: string
+                    is_default: boolean
+                    created_by_id: null or string
+                    updated_by_id: null or string
+                  address:  
+                    location_code: string            
+                    address_type_id: string
+                    line1: string
+                    line2: string
+                    city: string
+                    region: string
+                    country: string
+                    postal_code: string
+                    start_date: date
+                    created_by_id: null or string
+                    updated_by_id: null or string
+        '422':
+          description:  Unprocessable Entity. Validation errors occurred during the creation.
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  errors: [ "Name can't be blank","Tax ID must be unique" ]
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error.
+    get:
+      tags:
+        - Entities
+      summary: List Entities
+      description: Retrieve a list of all entities including their ID,name,tax_id,phone and address.
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Entity"
+                example:
+                  - id: string
+                    name: string
+                    guid: string
+                    tax_id: string
+                    phone: null or string
+                    is_online_marketplace: null or boolean
+                    parent_entity_id: null or string
+                    registration_date: null or date
+                    tax_exemptions_type: null or string
+                    created_by_id: string
+                    updated_by_id: string
+                    is_default: boolean
+                    created_at: datetime
+                    updated_at: datetime
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+  /scalartax/entities/{id}:
+    get:
+      tags:
+        - Entities
+      summary: Fetch Entity
+      description: Retrieve details of a specific entity by their unique ID,ncluding their name, phone,tax_id and address.
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Entity"
+                example:
+                  name: string
+                  guid: string
+                  tax_id: string
+                  phone: string
+                  is_online_marketplace: boolean
+                  registration_date: datetime
+                  tax_exemptions_type: string
+                  is_default: boolean
+                  created_by_id: null or string
+                  updated_by_id: null or string
+                  id: string
+                  parent_entity_id: null or string
+                  created_at: datetime
+                  updated_at: datetime
+        '404':
+          description: Not Found. Entity with that Specific ID not Found.
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  error: Entity Not Found.
+        '500':
+          description: Internal Serval Error.
+    put:
+      tags:
+        - Entities
+      summary: Update Entity
+      description: Update the details of an existing entity using their unique ID. Fields that can be updated include name, tax_id, phone, and address.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Entity"
+        required: true      
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: OK. Entity Updated Successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Entity"
+                example:
+                  name: string
+                  guid: string
+                  tax_id: string
+                  phone: string
+                  is_online_marketplace: boolean
+                  registration_date: datetime
+                  tax_exemptions_type: string
+                  is_default: boolean
+                  created_by_id: null or string
+                  updated_by_id: null or string
+                  id: string
+                  parent_entity_id: null or string
+                  created_at: datetime
+                  updated_at: datetime
+        '400':
+          description: Bad Request
+        '404':
+          description: Not Found. Entity with that Specific ID not Found.
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  error: Entity Not Found.
+        '422':
+          description: Unprocessable Entity. Validation errors occurred during the update.
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  errors: [ Phone number is invalid ]
+        '500':
+          description: Internal Server Error
+    delete:
+      tags:
+        - Entities
+      summary: Delete entity
+      description: Delete a entity from the system using their unique ID.
+      security:
+        - bearerAuth: []
+      responses:
+        '202':
+          description: No Content. Entity Deleted Successfully
+        '404':
+          description: Not Found. Entity with the Specific ID not Found.
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  error: Entity Not Found
+        '500':
+          description: Internal Server Error
+
+components:
+  schemas:
+    Entity:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Name of the entity
+        address_id:
+          type: string
+          description: Unique identifier for the address (optional)
+        guid:
+          type: string
+          description: Globally unique identifier for the entity
+        tax_id:
+          type: string
+          description: Tax identification number for the entity
+        phone:
+          type: string
+          description: Phone number of the entity (nullable)
+        is_online_marketplace:
+          type: string
+          description: Indicates if the entity operates as an online marketplace (e.g., Yes, No)
+        registration_date:
+          type: string
+          format: date
+          description: Date of registration for the entity
+        tax_exemptions_type:
+          type: string
+          description: Type of tax exemptions applicable to the entity
+        is_default:
+          type: boolean
+          description: Indicates if this is the default entity
+        created_by_id:
+          type: string
+          description: ID of the user who created the entity record (nullable)
+        updated_by_id:
+          type: string
+          description: ID of the user who last updated the entity record (nullable)
+
+        address:
+          type: object
+          properties:
+            location_code:
+              type: string
+              description: Code representing the location
+            address_type_id:
+              type: string
+              description: Identifier for the type of address (e.g., location)
+            line1:
+              type: string
+              description: First line of the address
+            line2:
+              type: string
+              description: Second line of the address (optional)
+            city:
+              type: string
+              description: City of the address
+            region:
+              type: string
+              description: State or region of the address
+            country:
+              type: string
+              description: Country of the address
+            postal_code:
+              type: string
+              description: Postal code of the address
+            start_date:
+              type: string
+              format: date
+              description: Date when the address becomes effective
+            created_by_id:
+              type: string
+              description: ID of the user who created the address record (nullable)
+            updated_by_id:
+              type: string
+              description: ID of the user who last updated the address record (nullable)
+          required:
+            - location_code
+            - address_type_id
+            - line1
+            - line2
+            - city
+            - region
+            - country
+            - postal_code
+            - start_date
+            - created_by_id
+            - updated_by_id 
+      required:
+        - name
+        - guid
+        - tax_id
+        - guide
+        - is_online_market
+        - registration_date
+        - tax_exemption_type
+        - is_default
+        - created_by_id
+        - updated_by_id 

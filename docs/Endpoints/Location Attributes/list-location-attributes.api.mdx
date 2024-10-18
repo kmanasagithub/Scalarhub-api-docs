@@ -1,0 +1,154 @@
+---
+id: list-location-attributes
+title: "List Location Attributes"
+description: "List Location Attributes"
+sidebar_label: "List Location Attributes"
+hide_title: true
+hide_table_of_contents: true
+api: eJyNVMFu2zAM/RWDZyNOh+3i0zqsGIoVaLF0pyAwGJmN1dmSKlFBAs//PtBODbv1hp1siI9PJN+jWmA8BMi3cGcVsrYmuWb2eh+ZAuxS8BScNYEC5C18WK/lU1JQXjtBQw733yEFZQ2TYYmic7UeuLLnIJAWgqqoQfnjsyPIwe6fSTGkQCdsXE2Qb1vQJeQQ2GtzgBTqS0HF/BhfyysMNrQcOWId/xKKRnNhn4qGMEQ/A0VXIlNZ7M/DlSbWdfI7GePK03/FkSEHoWLd0IR3ft7tuq7rUvi4NNMvWCY/6CVSYOhS+LSEuTVM3mCdbMgfySc33lsPQjnH3enAyZK6KTTElZVWDiRaOOQKcsiCwho94ykbNcBpWugvDL1m0deQQ8XsQp5l6PTqouhK2SY7XsHbch68LaPqaxl4oEunNHmWte0eAxXR112XvSOQVuoxd5eCNk+2t5ZmMRJs+vIf8bSYOp9Ccv1wm3y1KjZkuI9BCtLckHC1Wq/WF3uj6u19cZ3kbaJz1svkZuVPBxAGSO/0BrWgLkefJzDRmMk34f5JxNSKltl6TCZoZwM3aCYF/UPm2RDGFWQ6ceZq1EYI+w7aiwW2MFpguog4exkqG1igg1o/RSw5fonkz5Bvdykc0Wvc98u961KoCEvyvWt+0VlmqBQ5Gc3rvr57OkTe0aTfbh6h6/4AlVii7Q==
+sidebar_class_name: "get api-method"
+info_path: reference/api-reference/Endpoints/Location Attributes/scalartax
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import Heading from "@theme/Heading";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"List Location Attributes"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/scalartax/location_attributes"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+List Location Attributes
+
+<div>
+  <div>
+    <ApiTabs
+      label={undefined}
+      id={undefined}
+    >
+      <TabItem
+        label={"200"}
+        value={"200"}
+      >
+        <div>
+          
+          
+          OK
+          
+          
+        </div><div>
+          <MimeTabs
+            className={"openapi-tabs__mime"}
+            schemaType={"response"}
+          >
+            <TabItem
+              label={"application/json"}
+              value={"application/json"}
+            >
+              <SchemaTabs
+                className={"openapi-tabs__schema"}
+              >
+                <TabItem
+                  label={"Schema"}
+                  value={"Schema"}
+                >
+                  <details
+                    style={{}}
+                    className={"openapi-markdown__details response"}
+                    data-collapsed={false}
+                    open={true}
+                  >
+                    <summary
+                      style={{}}
+                      className={"openapi-markdown__details-summary-response"}
+                    >
+                      <strong>
+                        Schema
+                      </strong>
+                    </summary><div
+                      style={{"textAlign":"left","marginLeft":"1rem"}}
+                    >
+                      
+                    </div><ul
+                      style={{"marginLeft":"1rem"}}
+                    >
+                      <div
+                        style={{"marginTop":".5rem","marginBottom":".5rem"}}
+                      >
+                        
+                        
+                        object
+                        
+                        
+                      </div>
+                    </ul>
+                  </details>
+                </TabItem><TabItem
+                  label={"Example (from schema)"}
+                  value={"Example (from schema)"}
+                >
+                  <ResponseSamples
+                    responseExample={"[\n  {\n    \"id\": \"string\",\n    \"location_id\": \"string\",\n    \"attribute_name\": \"string\",\n    \"attribute_value\": \"string\",\n    \"attribute_unit_of_measure\": \"string\",\n    \"updated_by_id\": \"null | string\",\n    \"created_by_id\": \"null | string\",\n    \"created_at\": \"datetime\",\n    \"updated_at\": \"datetime\"\n  }\n]"}
+                    language={"json"}
+                  >
+                    
+                  </ResponseSamples>
+                </TabItem>
+              </SchemaTabs>
+            </TabItem>
+          </MimeTabs>
+        </div>
+      </TabItem><TabItem
+        label={"400"}
+        value={"400"}
+      >
+        <div>
+          
+          
+          Bad Request
+          
+          
+        </div><div>
+          
+        </div>
+      </TabItem><TabItem
+        label={"500"}
+        value={"500"}
+      >
+        <div>
+          
+          
+          Internal Server Error
+          
+          
+        </div><div>
+          
+        </div>
+      </TabItem>
+    </ApiTabs>
+  </div>
+</div>
+      

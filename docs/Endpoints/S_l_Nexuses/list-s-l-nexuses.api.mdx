@@ -1,0 +1,154 @@
+---
+id: list-s-l-nexuses
+title: "List S_l_Nexuses"
+description: "This endpoint retrieves the nexuses for the specific tenants."
+sidebar_label: "List S_l_Nexuses"
+hide_title: true
+hide_table_of_contents: true
+api: eJylVU2P2zgM/SsGT1vAiKeL9uLTdrHFYrBFp2hmT4NAYGQm1lSWVJEOMgj83xdU0qnz0dOekpCPFD8eXw4guGVon2BpvPlM+5GJYVVDR2yzS+JigBYee8cVhS5FF6TKJNnRjriSnqpwDKo2MZffnMi6jbOVUMAgvIAaMnGKQVO3B/j97k4/zl94+AdqsDEIBVEvpuSdRfU2z6yQA7DtaUD9Ji+JoIW4fiYrUAPtcUieoH06gOugBZbswlY9QZy8mHOjjWOQ/DI3ZdoeC3m1PI/ZsdGXjtEuCG0p//B0zmpxvwYYGzu6ThhwOLPSZkNW3I5Mh/LTU/12v3yo1PSmdNGd3GH0vgbuY5arVOy2AWXMdPU0CwoZZEVQZ0KcO8sCb/bBccxWQTN0j2x8tOhNiYMW1jF6wgA1zOw382lsojxgoCCGWHDtHfdD2fksj+D+YmMsmXDwTqtn9MRGcH8W49gwi8EyyzOPzYRCnVlf0mBM3W2Hvl/q3+Y4phuz+qVfqyDvKRs3pJiFsokbk8nG3F21eLk/wT2uPd0Y7I8WUOekRYsbaNbBuX1aTdM01fDu1qH9iV31lb6PxAJTDe9vYe6DUA7oqyXlHeXqY84xg6YcSPqonWxJ7y6h9NBCwxY9ZsF9w+ZEAGJdW4nncpdj9tBCL5K4bRpMbnG62oWNQ7N7C5ei8yXHbixHVh3zwFTP07RNcziskcmM2U9Tc5Xgk9LxNXZVgwubWOTDiYoFLEvZj7i/Cp2pYfXhy331V7Sj0rQIEtSgXR2Rbxd3i7uTdqEt2nXaq8Ytx6Q00FXN6553zkdIkbEBnaJOpj9mMN2VUB74YaNLcZZuZyuYRtEpsgwYZgV9cizVXOcvuj78FOD/rfgnhRbaS5M8uqAllRkcTqx5glfWKFNmvFnV0EcWhRwX/K/uV83fR1LZflrVsMPs9Fr011RDT9hRLkT7RqrsH6ylpEPdoR+1lKt/FGXEK5///vgI0/QfHeZ6hw==
+sidebar_class_name: "get api-method"
+info_path: reference/api-reference/Endpoints/S_l_Nexuses/scalartax
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import Heading from "@theme/Heading";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"List S_l_Nexuses"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/scalartax/s_l_nexuses"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+This endpoint retrieves the nexuses for the specific tenants.
+
+<div>
+  <div>
+    <ApiTabs
+      label={undefined}
+      id={undefined}
+    >
+      <TabItem
+        label={"200"}
+        value={"200"}
+      >
+        <div>
+          
+          
+          OK
+          
+          
+        </div><div>
+          <MimeTabs
+            className={"openapi-tabs__mime"}
+            schemaType={"response"}
+          >
+            <TabItem
+              label={"application/json"}
+              value={"application/json"}
+            >
+              <SchemaTabs
+                className={"openapi-tabs__schema"}
+              >
+                <TabItem
+                  label={"Schema"}
+                  value={"Schema"}
+                >
+                  <details
+                    style={{}}
+                    className={"openapi-markdown__details response"}
+                    data-collapsed={false}
+                    open={true}
+                  >
+                    <summary
+                      style={{}}
+                      className={"openapi-markdown__details-summary-response"}
+                    >
+                      <strong>
+                        Schema
+                      </strong>
+                    </summary><div
+                      style={{"textAlign":"left","marginLeft":"1rem"}}
+                    >
+                      
+                    </div><ul
+                      style={{"marginLeft":"1rem"}}
+                    >
+                      <div
+                        style={{"marginTop":".5rem","marginBottom":".5rem"}}
+                      >
+                        
+                        
+                        object
+                        
+                        
+                      </div>
+                    </ul>
+                  </details>
+                </TabItem><TabItem
+                  label={"Example (from schema)"}
+                  value={"Example (from schema)"}
+                >
+                  <ResponseSamples
+                    responseExample={"[\n  {\n    \"id\": \"string\",\n    \"entity_id\": \"string\",\n    \"country\": \"string\",\n    \"region\": \"string\",\n    \"juris_type_id\": \"integer\",\n    \"jurisdiction_type_id\": \"integer\",\n    \"juris_code\": \"string\",\n    \"juris_name\": \"string\",\n    \"effective_date\": \"string (ISO date)\",\n    \"end_date\": null,\n    \"short_name\": \"string\",\n    \"signature_code\": \"string\",\n    \"state_assigned_no\": \"string\",\n    \"nexus_type_id\": \"integer\",\n    \"sourcing\": \"string\",\n    \"has_local_nexus\": \"boolean\",\n    \"local_nexus_type_id\": \"integer\",\n    \"has_permanent_establishment\": \"boolean\",\n    \"tax_id\": \"string\",\n    \"streamlined_sales_tax\": \"boolean\",\n    \"is_sst_active\": \"boolean\",\n    \"created_by_id\": \"string\",\n    \"updated_by_id\": \"string\",\n    \"tax_type_group\": \"string\",\n    \"nexus_tax_type_group\": \"string\",\n    \"is_seller_importer_of_record\": \"boolean\",\n    \"tax_name\": \"string\",\n    \"taxable_nexus\": \"boolean\",\n    \"created_at\": \"datetime\",\n    \"updated_at\": \"datetime\"\n  }\n]"}
+                    language={"json"}
+                  >
+                    
+                  </ResponseSamples>
+                </TabItem>
+              </SchemaTabs>
+            </TabItem>
+          </MimeTabs>
+        </div>
+      </TabItem><TabItem
+        label={"400"}
+        value={"400"}
+      >
+        <div>
+          
+          
+          Bad Request
+          
+          
+        </div><div>
+          
+        </div>
+      </TabItem><TabItem
+        label={"500"}
+        value={"500"}
+      >
+        <div>
+          
+          
+          Internal Server Error
+          
+          
+        </div><div>
+          
+        </div>
+      </TabItem>
+    </ApiTabs>
+  </div>
+</div>
+      

@@ -1,0 +1,307 @@
+---
+id: list-products
+title: "List Products"
+description: "This endpoint retrieves the details of all products."
+sidebar_label: "List Products"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9VlGP4kYM/iuRnyMSKNvt5en22lV16mrv1KVqJYSQSQyZazIzO+MgVij/vXIIkAR2t7pKfQLZnz0ez/fZ2QPjxkMyh6/OZFXKHhYhZORTpywroyGBWa58QDqzRmkOHLFTtCUfcE5BRoyq8IFZB1gUgW2TjCAER94a7clDsodJHMtPP/GX3yCE1GgmzeJFawuVonijb14ge/BpTiXKP36xBAmgc/gCISim0nfsZvWNUoYQrDOWHKvDwW1Fy9Rk1EF7dkpvIATaYWkLMY0nP9xOb6AeXP+tkEeVkgQw7v7FAbO/pjcfBH6saeNMZd+OeUDLxkpQikwb417ewZM2WyN40qz4ZamytwPuH2eTeDIdx/HNeDqJJ5P19MNPqx9vbzHO0mmWNUc7QqZsuXotna6KAleSj11FnfTiqEOobPbfEhw7hsxOrSom//2MOOVYaizfebKfTWGctOActMWieifqz1wx9aMqrXhp1suS0FfunfjH6A7qWhT0XClHmchzUPVlRW+dtgiBFTe5W5nfHbFQD0/qKaYvhg7ThyzuELTLvSF5hly4+rSX5TYi65t8t2XzPQixzs3sy/5s7w+gk/ks4MsUrUrPjrMSO493VlsH2NfN2THQw2UEMiQgGFbNYx8DhvZruni1F33rUAbXPC3Xr7kuCP3/Xbte1Iu6oe302lb5hFnwOz1X5Bva3FzDfNZMTmMRPJHbkgvunROd1yGUxLmR4jbUjA7kHBKIfIoFOsZddFxxEYTgm+hDzytXQAI5s/VJFKFVo5ado9SU0XZ8Qb6Wx8ro4JAH6rCbJomi/X6FnpaVK+o6ukjwYFIsTrGLEJRem2aytEp5aoqe4e61s31w9/Vz8ItJq5I0Y6txudIBNh7Fo7jd0Zg2O7oli8Q9VdYaJ13qFd29tj9ABEMlKkG1po8dWKNucqX/spb3kKV6NVuDiZoNajyXqDsFPSjPQWc0DHb46Svje79m2mnNtOPIFqi0lNHce9+SZA4nkpxFJ6XIPMuNZ4EcXvQPeVAxP1ckc2S+CGGLTh1W4HxRh5ATZuQaZv1NMmru0pSsNPIoyouvJaHAib6/3s+grv8BOBxuvA==
+sidebar_class_name: "get api-method"
+info_path: reference/api-reference/Endpoints/Products/scalartax
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import Heading from "@theme/Heading";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"List Products"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/scalartax/products/"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+This endpoint retrieves the details of all products.
+
+<div>
+  <div>
+    <ApiTabs
+      label={undefined}
+      id={undefined}
+    >
+      <TabItem
+        label={"200"}
+        value={"200"}
+      >
+        <div>
+          
+          
+          OK
+          
+          
+        </div><div>
+          <MimeTabs
+            className={"openapi-tabs__mime"}
+            schemaType={"response"}
+          >
+            <TabItem
+              label={"application/json"}
+              value={"application/json"}
+            >
+              <SchemaTabs
+                className={"openapi-tabs__schema"}
+              >
+                <TabItem
+                  label={"Schema"}
+                  value={"Schema"}
+                >
+                  <details
+                    style={{}}
+                    className={"openapi-markdown__details response"}
+                    data-collapsed={false}
+                    open={true}
+                  >
+                    <summary
+                      style={{}}
+                      className={"openapi-markdown__details-summary-response"}
+                    >
+                      <strong>
+                        Schema
+                      </strong>
+                    </summary><div
+                      style={{"textAlign":"left","marginLeft":"1rem"}}
+                    >
+                      
+                    </div><ul
+                      style={{"marginLeft":"1rem"}}
+                    >
+                      <li>
+                        <div
+                          style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem","paddingBottom":".5rem"}}
+                        >
+                          Array [
+                        </div>
+                      </li><SchemaItem
+                        collapsible={false}
+                        name={"product_code"}
+                        required={true}
+                        schemaName={"string"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"string","example":"123745"}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"description"}
+                        required={true}
+                        schemaName={"string"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"string","example":"Nice"}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"tax_code"}
+                        required={true}
+                        schemaName={"string"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"string","example":"TX459"}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"product_group"}
+                        required={true}
+                        schemaName={"string"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"string","example":"Laptop"}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"category"}
+                        required={true}
+                        schemaName={"string"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"string","example":"Lenovo"}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"entity_id"}
+                        required={true}
+                        schemaName={"string"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"string","example":"ENT20241005142022f498b677a0dc4dd"}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"created_by_id"}
+                        required={true}
+                        schemaName={"string"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"string","nullable":true,"example":null}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"updated_by_id"}
+                        required={true}
+                        schemaName={"string"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"string","nullable":true,"example":null}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={true}
+                        className={"schemaItem"}
+                      >
+                        <details
+                          style={{}}
+                          className={"openapi-markdown__details"}
+                        >
+                          <summary
+                            style={{}}
+                          >
+                            <span
+                              className={"openapi-schema__container"}
+                            >
+                              <strong
+                                className={"openapi-schema__property"}
+                              >
+                                product_attributes
+                              </strong><span
+                                className={"openapi-schema__name"}
+                              >
+                                 object[]
+                              </span><span
+                                className={"openapi-schema__divider"}
+                              >
+                                
+                              </span><span
+                                className={"openapi-schema__required"}
+                              >
+                                required
+                              </span>
+                            </span>
+                          </summary><div
+                            style={{"marginLeft":"1rem"}}
+                          >
+                            <li>
+                              <div
+                                style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem","paddingBottom":".5rem"}}
+                              >
+                                Array [
+                              </div>
+                            </li><SchemaItem
+                              collapsible={false}
+                              name={"attribute_name"}
+                              required={true}
+                              schemaName={"string"}
+                              qualifierMessage={undefined}
+                              schema={{"type":"string","example":"Color"}}
+                            >
+                              
+                            </SchemaItem><SchemaItem
+                              collapsible={false}
+                              name={"attribute_value"}
+                              required={true}
+                              schemaName={"string"}
+                              qualifierMessage={undefined}
+                              schema={{"type":"string","example":"White"}}
+                            >
+                              
+                            </SchemaItem><SchemaItem
+                              collapsible={false}
+                              name={"attribute_unit_of_measure"}
+                              required={true}
+                              schemaName={"string"}
+                              qualifierMessage={undefined}
+                              schema={{"type":"string","example":"N/A"}}
+                            >
+                              
+                            </SchemaItem><li>
+                              <div
+                                style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem"}}
+                              >
+                                ]
+                              </div>
+                            </li>
+                          </div>
+                        </details>
+                      </SchemaItem><li>
+                        <div
+                          style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem"}}
+                        >
+                          ]
+                        </div>
+                      </li>
+                    </ul>
+                  </details>
+                </TabItem><TabItem
+                  label={"Example (from schema)"}
+                  value={"Example (from schema)"}
+                >
+                  <ResponseSamples
+                    responseExample={"[\n  {\n    \"id\": \"string\",\n    \"product_code\": \"string\",\n    \"description\": \"string\",\n    \"tax_code\": \"string\",\n    \"product_group\": \"string\",\n    \"category\": \"string\",\n    \"entity_id\": \"string\",\n    \"created_by_id\": \"string\",\n    \"updated_by_id\": \"string\",\n    \"created_at\": \"datetime\",\n    \"updated_at\": \"datetime\",\n    \"product_attributes\": [\n      {\n        \"id\": \"string\",\n        \"product_id\": \"string\",\n        \"attribute_name\": \"string\",\n        \"attribute_value\": \"string\",\n        \"attribute_unit_of_measure\": \"string\",\n        \"created_by_id\": \"string\",\n        \"updated_by_id\": \"string\",\n        \"created_at\": \"datetime\",\n        \"updated_at\": \"datetime\"\n      }\n    ]\n  }\n]"}
+                    language={"json"}
+                  >
+                    
+                  </ResponseSamples>
+                </TabItem>
+              </SchemaTabs>
+            </TabItem>
+          </MimeTabs>
+        </div>
+      </TabItem><TabItem
+        label={"400"}
+        value={"400"}
+      >
+        <div>
+          
+          
+          Bad Request
+          
+          
+        </div><div>
+          
+        </div>
+      </TabItem><TabItem
+        label={"500"}
+        value={"500"}
+      >
+        <div>
+          
+          
+          Internal Server Error
+          
+          
+        </div><div>
+          
+        </div>
+      </TabItem>
+    </ApiTabs>
+  </div>
+</div>
+      

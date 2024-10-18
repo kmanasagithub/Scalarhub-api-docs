@@ -1,0 +1,597 @@
+---
+id: create-product
+title: "Create Product"
+description: "This endpoint allows you to add a new product to the scalartax's list of products."
+sidebar_label: "Create Product"
+hide_title: true
+hide_table_of_contents: true
+api: eJztWN9v2zYQ/leIe9mLZtmes7Z6WtplQIEiDRp3G2AYxpmibXaSyJJUEsPQ/z4cKVu/nGTrsD0MyUuM493xePy+u6MO4HBrIVnAjVFpyZ2FZQSpsNxI7aQqIIH5TlomilQrWTiGWabuLdurkjnFME0ZskLcMx3sSeh2glmOGRqHD99ZlknrmNocVewIIjDiaymse6vSPSQH4KpwonD0E7XOJEfaPP5iKYIDWL4TOdIvt9cCEkBjcA8RSCdy25Kr9RfBHUSgjdLCOCn8ar3ziqtUtLStM7LYQgTiAXOdkWgy/eHV7AKqXhKeMrmWXJCBw4e/sMH899nFG1I/xrQ1qtRP23xA7ZQmI45ObJXZP6MvCnWnSF8UTrr9SqZPG1xdz6fj6WwyHl9MZtPxdLqZvXm9/vHVKxynfJamfmsj0Il0tX7MXVFmGa7JnzOlaLmnhSqCUqf/zMExY+ickevSCfvtiDj5WBWYP3Nl71SmDKWgMbrDrHzG6reddKJrVRbSrdRmlQu0pXnG/jq+hKoKTJFGpETSXtTDiJ7abRmBk877rsl+edSFqr9ThzFdMrSQ3kdxC6Bt7PXB08fC2asdhutJ1hXZEHm3YNVr7HT1zcEIWP6kVqvCBihMxxP6d97HuxA4syXnwtpNmWV0tpd69VKvXurVS736+/WqlbID5MJa3LbXGT9fcI6zEySLAxAcmyvoFotG3i1oJ3FD+6GLmtvNQsPf1pU3HG0pdtnWLPRYNLRABwmQjpMeIkeDvvwcmx7NRVfaJ8+5lZoh55YGNPjvjl1F//sTLqtlVXk+z8bjYSN+iyn7FB4LxKfZdDrU+Vxoo4gtVI3ZlcfniP2KmUx9X2bCGGUsU5yXxoiUpSXF6h8qPlqpitE3dPVTrW5ROmxFJekXlJlI6UEUhgjWPLHqA1+cO/D7wglTYMZuhbkThl2Rw5EvrblwO0W51sr6FoFuBwnEp8dWfCwTMURgvX1gSWkySGDnnLZJHKOWozrkEVd5fDcZlIs6Vkpe8OOh2LhJ4vhwWKMVq9JkVRUPHHxQHLOT7TICyuKn5tV3dUzZoj/uHGeavkc/t3TqV5hNhuWrnj865aueMbrl69k5YoB/au0D7AfhIwVqQM3Qns8xM7Tgp4np2+ySEiqLjfJgrFvMrUfBHB8eu0zLLm/es58VL3NROKybI2EkqE1G49G4pgFyT4M6ZLK7LbVWhmDXQUEbRzaoeEbkKEmrFv3UUvNtUZjcftwQxOlWz3rzOrEfPZV1ORatgLqM6h+49T3h3/l6UfPfiQcX6wxlQVH6tBxqUi7g5KPdvSOgOWFH9E0WEBj0mQhE4q+lIKgulhHcoZFhtFwsqwh2AlNhPJz+EHuPIX++7+cUCKkHAA2qFpE2WFxyLrR7UnfZqjA3H2/nEMG6/j6TB8IZvKfnFN5DAhCB8vn286mXHSDDYluGiSb4pL8/AfjraNs=
+sidebar_class_name: "post api-method"
+info_path: reference/api-reference/Endpoints/Products/scalartax
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import Heading from "@theme/Heading";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Create Product"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/scalartax/products/"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+This endpoint allows you to add a new product to the scalartax's list of products.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<MimeTabs
+  className={"openapi-tabs__mime"}
+>
+  <TabItem
+    label={"application/json"}
+    value={"application/json-schema"}
+  >
+    <details
+      style={{}}
+      className={"openapi-markdown__details mime"}
+      data-collapsed={false}
+      open={true}
+    >
+      <summary
+        style={{}}
+        className={"openapi-markdown__details-summary-mime"}
+      >
+        <h3
+          className={"openapi-markdown__details-summary-header-body"}
+        >
+          Body
+        </h3><span
+          style={{"opacity":"0.6"}}
+        >
+           array
+        </span><strong
+          className={"openapi-schema__required"}
+        >
+          required
+        </strong>
+      </summary><div
+        style={{"textAlign":"left","marginLeft":"1rem"}}
+      >
+        <div
+          style={{"marginTop":"1rem","marginBottom":"1rem"}}
+        >
+          
+          
+          Product object
+          
+          
+        </div>
+      </div><ul
+        style={{"marginLeft":"1rem"}}
+      >
+        <li>
+          <div
+            style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem","paddingBottom":".5rem"}}
+          >
+            Array [
+          </div>
+        </li><SchemaItem
+          collapsible={false}
+          name={"product_code"}
+          required={true}
+          schemaName={"string"}
+          qualifierMessage={undefined}
+          schema={{"type":"string","example":"123745"}}
+        >
+          
+        </SchemaItem><SchemaItem
+          collapsible={false}
+          name={"description"}
+          required={true}
+          schemaName={"string"}
+          qualifierMessage={undefined}
+          schema={{"type":"string","example":"Nice"}}
+        >
+          
+        </SchemaItem><SchemaItem
+          collapsible={false}
+          name={"tax_code"}
+          required={true}
+          schemaName={"string"}
+          qualifierMessage={undefined}
+          schema={{"type":"string","example":"TX459"}}
+        >
+          
+        </SchemaItem><SchemaItem
+          collapsible={false}
+          name={"product_group"}
+          required={true}
+          schemaName={"string"}
+          qualifierMessage={undefined}
+          schema={{"type":"string","example":"Laptop"}}
+        >
+          
+        </SchemaItem><SchemaItem
+          collapsible={false}
+          name={"category"}
+          required={true}
+          schemaName={"string"}
+          qualifierMessage={undefined}
+          schema={{"type":"string","example":"Lenovo"}}
+        >
+          
+        </SchemaItem><SchemaItem
+          collapsible={false}
+          name={"entity_id"}
+          required={true}
+          schemaName={"string"}
+          qualifierMessage={undefined}
+          schema={{"type":"string","example":"ENT20241005142022f498b677a0dc4dd"}}
+        >
+          
+        </SchemaItem><SchemaItem
+          collapsible={false}
+          name={"created_by_id"}
+          required={true}
+          schemaName={"string"}
+          qualifierMessage={undefined}
+          schema={{"type":"string","nullable":true,"example":null}}
+        >
+          
+        </SchemaItem><SchemaItem
+          collapsible={false}
+          name={"updated_by_id"}
+          required={true}
+          schemaName={"string"}
+          qualifierMessage={undefined}
+          schema={{"type":"string","nullable":true,"example":null}}
+        >
+          
+        </SchemaItem><SchemaItem
+          collapsible={true}
+          className={"schemaItem"}
+        >
+          <details
+            style={{}}
+            className={"openapi-markdown__details"}
+          >
+            <summary
+              style={{}}
+            >
+              <span
+                className={"openapi-schema__container"}
+              >
+                <strong
+                  className={"openapi-schema__property"}
+                >
+                  product_attributes
+                </strong><span
+                  className={"openapi-schema__name"}
+                >
+                   object[]
+                </span><span
+                  className={"openapi-schema__divider"}
+                >
+                  
+                </span><span
+                  className={"openapi-schema__required"}
+                >
+                  required
+                </span>
+              </span>
+            </summary><div
+              style={{"marginLeft":"1rem"}}
+            >
+              <li>
+                <div
+                  style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem","paddingBottom":".5rem"}}
+                >
+                  Array [
+                </div>
+              </li><SchemaItem
+                collapsible={false}
+                name={"attribute_name"}
+                required={true}
+                schemaName={"string"}
+                qualifierMessage={undefined}
+                schema={{"type":"string","example":"Color"}}
+              >
+                
+              </SchemaItem><SchemaItem
+                collapsible={false}
+                name={"attribute_value"}
+                required={true}
+                schemaName={"string"}
+                qualifierMessage={undefined}
+                schema={{"type":"string","example":"White"}}
+              >
+                
+              </SchemaItem><SchemaItem
+                collapsible={false}
+                name={"attribute_unit_of_measure"}
+                required={true}
+                schemaName={"string"}
+                qualifierMessage={undefined}
+                schema={{"type":"string","example":"N/A"}}
+              >
+                
+              </SchemaItem><li>
+                <div
+                  style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem"}}
+                >
+                  ]
+                </div>
+              </li>
+            </div>
+          </details>
+        </SchemaItem><li>
+          <div
+            style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem"}}
+          >
+            ]
+          </div>
+        </li>
+      </ul>
+    </details>
+  </TabItem>
+</MimeTabs><div>
+  <div>
+    <ApiTabs
+      label={undefined}
+      id={undefined}
+    >
+      <TabItem
+        label={"201"}
+        value={"201"}
+      >
+        <div>
+          
+          
+          Product Created successfully
+          
+          
+        </div><div>
+          <MimeTabs
+            className={"openapi-tabs__mime"}
+            schemaType={"response"}
+          >
+            <TabItem
+              label={"application/json"}
+              value={"application/json"}
+            >
+              <SchemaTabs
+                className={"openapi-tabs__schema"}
+              >
+                <TabItem
+                  label={"Schema"}
+                  value={"Schema"}
+                >
+                  <details
+                    style={{}}
+                    className={"openapi-markdown__details response"}
+                    data-collapsed={false}
+                    open={true}
+                  >
+                    <summary
+                      style={{}}
+                      className={"openapi-markdown__details-summary-response"}
+                    >
+                      <strong>
+                        Schema
+                      </strong>
+                    </summary><div
+                      style={{"textAlign":"left","marginLeft":"1rem"}}
+                    >
+                      
+                    </div><ul
+                      style={{"marginLeft":"1rem"}}
+                    >
+                      <li>
+                        <div
+                          style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem","paddingBottom":".5rem"}}
+                        >
+                          Array [
+                        </div>
+                      </li><SchemaItem
+                        collapsible={false}
+                        name={"product_code"}
+                        required={true}
+                        schemaName={"string"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"string","example":"123745"}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"description"}
+                        required={true}
+                        schemaName={"string"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"string","example":"Nice"}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"tax_code"}
+                        required={true}
+                        schemaName={"string"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"string","example":"TX459"}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"product_group"}
+                        required={true}
+                        schemaName={"string"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"string","example":"Laptop"}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"category"}
+                        required={true}
+                        schemaName={"string"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"string","example":"Lenovo"}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"entity_id"}
+                        required={true}
+                        schemaName={"string"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"string","example":"ENT20241005142022f498b677a0dc4dd"}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"created_by_id"}
+                        required={true}
+                        schemaName={"string"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"string","nullable":true,"example":null}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"updated_by_id"}
+                        required={true}
+                        schemaName={"string"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"string","nullable":true,"example":null}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={true}
+                        className={"schemaItem"}
+                      >
+                        <details
+                          style={{}}
+                          className={"openapi-markdown__details"}
+                        >
+                          <summary
+                            style={{}}
+                          >
+                            <span
+                              className={"openapi-schema__container"}
+                            >
+                              <strong
+                                className={"openapi-schema__property"}
+                              >
+                                product_attributes
+                              </strong><span
+                                className={"openapi-schema__name"}
+                              >
+                                 object[]
+                              </span><span
+                                className={"openapi-schema__divider"}
+                              >
+                                
+                              </span><span
+                                className={"openapi-schema__required"}
+                              >
+                                required
+                              </span>
+                            </span>
+                          </summary><div
+                            style={{"marginLeft":"1rem"}}
+                          >
+                            <li>
+                              <div
+                                style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem","paddingBottom":".5rem"}}
+                              >
+                                Array [
+                              </div>
+                            </li><SchemaItem
+                              collapsible={false}
+                              name={"attribute_name"}
+                              required={true}
+                              schemaName={"string"}
+                              qualifierMessage={undefined}
+                              schema={{"type":"string","example":"Color"}}
+                            >
+                              
+                            </SchemaItem><SchemaItem
+                              collapsible={false}
+                              name={"attribute_value"}
+                              required={true}
+                              schemaName={"string"}
+                              qualifierMessage={undefined}
+                              schema={{"type":"string","example":"White"}}
+                            >
+                              
+                            </SchemaItem><SchemaItem
+                              collapsible={false}
+                              name={"attribute_unit_of_measure"}
+                              required={true}
+                              schemaName={"string"}
+                              qualifierMessage={undefined}
+                              schema={{"type":"string","example":"N/A"}}
+                            >
+                              
+                            </SchemaItem><li>
+                              <div
+                                style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem"}}
+                              >
+                                ]
+                              </div>
+                            </li>
+                          </div>
+                        </details>
+                      </SchemaItem><li>
+                        <div
+                          style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem"}}
+                        >
+                          ]
+                        </div>
+                      </li>
+                    </ul>
+                  </details>
+                </TabItem><TabItem
+                  label={"Example (from schema)"}
+                  value={"Example (from schema)"}
+                >
+                  <ResponseSamples
+                    responseExample={"{\n  \"message\": \"Products created successfully\",\n  \"products\": [\n    {\n      \"id\": \"string\",\n      \"product_code\": \"string\",\n      \"description\": \"string\",\n      \"tax_code\": \"string\",\n      \"product_group\": \"string\",\n      \"category\": \"string\",\n      \"entity_id\": \"string\",\n      \"created_by_id\": \"string\",\n      \"updated_by_id\": \"string\",\n      \"created_at\": \"datetime\",\n      \"updated_at\": \"datetime\",\n      \"product_attributes\": [\n        {\n          \"id\": \"string\",\n          \"product_id\": \"string\",\n          \"attribute_name\": \"string\",\n          \"attribute_value\": \"string\",\n          \"attribute_unit_of_measure\": \"string\",\n          \"created_by_id\": \"string\",\n          \"updated_by_id\": \"string\",\n          \"created_at\": \"datetime\",\n          \"updated_at\": \"datetime\"\n        },\n        {\n          \"id\": \"string\",\n          \"product_id\": \"string\",\n          \"attribute_name\": \"string\",\n          \"attribute_value\": \"string\",\n          \"attribute_unit_of_measure\": \"string\",\n          \"created_by_id\": \"string\",\n          \"updated_by_id\": \"string\",\n          \"created_at\": \"datetime\",\n          \"updated_at\": \"datetime\"\n        }\n      ]\n    }\n  ]\n}"}
+                    language={"json"}
+                  >
+                    
+                  </ResponseSamples>
+                </TabItem>
+              </SchemaTabs>
+            </TabItem>
+          </MimeTabs>
+        </div>
+      </TabItem><TabItem
+        label={"400"}
+        value={"400"}
+      >
+        <div>
+          
+          
+          Bad Request
+          
+          
+        </div><div>
+          
+        </div>
+      </TabItem><TabItem
+        label={"422"}
+        value={"422"}
+      >
+        <div>
+          
+          
+          Unprocessable Entity. Validation errors occurred during the creation.
+          
+          
+        </div><div>
+          <MimeTabs
+            className={"openapi-tabs__mime"}
+            schemaType={"response"}
+          >
+            <TabItem
+              label={"application/json"}
+              value={"application/json"}
+            >
+              <SchemaTabs
+                className={"openapi-tabs__schema"}
+              >
+                <TabItem
+                  label={"Schema"}
+                  value={"Schema"}
+                >
+                  <details
+                    style={{}}
+                    className={"openapi-markdown__details response"}
+                    data-collapsed={false}
+                    open={true}
+                  >
+                    <summary
+                      style={{}}
+                      className={"openapi-markdown__details-summary-response"}
+                    >
+                      <strong>
+                        Schema
+                      </strong>
+                    </summary><div
+                      style={{"textAlign":"left","marginLeft":"1rem"}}
+                    >
+                      
+                    </div><ul
+                      style={{"marginLeft":"1rem"}}
+                    >
+                      <div
+                        style={{"marginTop":".5rem","marginBottom":".5rem"}}
+                      >
+                        
+                        
+                        object
+                        
+                        
+                      </div>
+                    </ul>
+                  </details>
+                </TabItem><TabItem
+                  label={"Example (from schema)"}
+                  value={"Example (from schema)"}
+                >
+                  <ResponseSamples
+                    responseExample={"{\n  \"errors\": [\n    \"Failed to Create Products\"\n  ]\n}"}
+                    language={"json"}
+                  >
+                    
+                  </ResponseSamples>
+                </TabItem>
+              </SchemaTabs>
+            </TabItem>
+          </MimeTabs>
+        </div>
+      </TabItem><TabItem
+        label={"500"}
+        value={"500"}
+      >
+        <div>
+          
+          
+          Internal Server Error.
+          
+          
+        </div><div>
+          
+        </div>
+      </TabItem>
+    </ApiTabs>
+  </div>
+</div>
+      

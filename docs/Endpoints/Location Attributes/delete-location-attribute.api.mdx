@@ -1,0 +1,186 @@
+---
+id: delete-location-attribute
+title: "Delete Location Attribute"
+description: "Delete Location Attribute"
+sidebar_label: "Delete Location Attribute"
+hide_title: true
+hide_table_of_contents: true
+api: eJx9VMFqGzEQ/RUxpxaE1ynpRacG7EJoaEKdnowpsnacVaqVFGk2tVn238vsLlsnXuqLbenN05t5T2qB9FMGtYW7YDTZ4MUNUbL7hjDDTkLUSddImBjUgtc1ggJbggTrQUHUVIGEbCqsNagW6BQZkSlZ/wSdhIQvjU1YgqLUYLfjlRyDz5gZ/2m55K8Ss0k2sgJQcP9tIS4FiRU6pFJsGmMw50Pj3GnBR1wvry85vgcSX0Pjy1mqP5YqQRWKTURjD9aI25XwUwlIMMETemJiHaOzA0XxnJm9vew47J/REEjAo66jQ97ClEICNTNc8U8edPyR8HluEreeMHntxAbTKyax7hkZ/hbXjwZnOgUJNVIVSlBQ9iCQg2sKimy004n0sXBj4S892V+0tuzY2/7kwf8mOVBQEcWsikJHuxi7XZhQF69X8F7XQwplY3pJAw908pxGFUXb7nXGX01yXVdcEHBHbqrdcewOoR+7JR4ybPoeHvVxtvTd1G8ebsUqmKZGT/0eSODmhoKrxXKxHK3Xprd+DDzXbZoYQ2KH38g/H0AeIH0Kam0ZNS59OYNxZAlTne8P7Ko1OM/WYwpGx5Cp1v5M0P/8fjOFKZ+ERyqi09YzY99COwZhC1MQQMJMFECCsiW/B1XIxAWDaT/ZM15+aTCdQG13El51snrP1mxbKG3m3yWog3YZL7RNlww+/BjfiY8C5LzmcVH7E7umXcP/QMJvPA1vUrfrJFSoS0z96cPGjTEY6azk4jpzrKZLslrfrR/X0HV/AXRxw0Q=
+sidebar_class_name: "delete api-method"
+info_path: reference/api-reference/Endpoints/Location Attributes/scalartax
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import Heading from "@theme/Heading";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete Location Attribute"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/scalartax/location_attributes/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Delete Location Attribute
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<details
+  style={{"marginBottom":"1rem"}}
+  className={"openapi-markdown__details"}
+  data-collapsed={false}
+  open={true}
+>
+  <summary
+    style={{}}
+  >
+    <h3
+      className={"openapi-markdown__details-summary-header-params"}
+    >
+      Path Parameters
+    </h3>
+  </summary><div>
+    <ul>
+      <ParamsItem
+        className={"paramsItem"}
+        param={{"name":"id","in":"path","schema":{"type":"string"},"required":true,"enumDescriptions":[]}}
+      >
+        
+      </ParamsItem>
+    </ul>
+  </div>
+</details><div>
+  <div>
+    <ApiTabs
+      label={undefined}
+      id={undefined}
+    >
+      <TabItem
+        label={"200"}
+        value={"200"}
+      >
+        <div>
+          
+          
+          OK. Location Attribute Deletd Successfully.
+          
+          
+        </div><div>
+          
+        </div>
+      </TabItem><TabItem
+        label={"404"}
+        value={"404"}
+      >
+        <div>
+          
+          
+          Not Found. Location Attribute with the Specific ID not Found.
+          
+          
+        </div><div>
+          <MimeTabs
+            className={"openapi-tabs__mime"}
+            schemaType={"response"}
+          >
+            <TabItem
+              label={"application/json"}
+              value={"application/json"}
+            >
+              <SchemaTabs
+                className={"openapi-tabs__schema"}
+              >
+                <TabItem
+                  label={"Schema"}
+                  value={"Schema"}
+                >
+                  <details
+                    style={{}}
+                    className={"openapi-markdown__details response"}
+                    data-collapsed={false}
+                    open={true}
+                  >
+                    <summary
+                      style={{}}
+                      className={"openapi-markdown__details-summary-response"}
+                    >
+                      <strong>
+                        Schema
+                      </strong>
+                    </summary><div
+                      style={{"textAlign":"left","marginLeft":"1rem"}}
+                    >
+                      
+                    </div><ul
+                      style={{"marginLeft":"1rem"}}
+                    >
+                      <div
+                        style={{"marginTop":".5rem","marginBottom":".5rem"}}
+                      >
+                        
+                        
+                        object
+                        
+                        
+                      </div>
+                    </ul>
+                  </details>
+                </TabItem><TabItem
+                  label={"Example (from schema)"}
+                  value={"Example (from schema)"}
+                >
+                  <ResponseSamples
+                    responseExample={"{\n  \"error\": \"Location Attribute Not Found.\"\n}"}
+                    language={"json"}
+                  >
+                    
+                  </ResponseSamples>
+                </TabItem>
+              </SchemaTabs>
+            </TabItem>
+          </MimeTabs>
+        </div>
+      </TabItem><TabItem
+        label={"500"}
+        value={"500"}
+      >
+        <div>
+          
+          
+          Internal Server Error
+          
+          
+        </div><div>
+          
+        </div>
+      </TabItem>
+    </ApiTabs>
+  </div>
+</div>
+      

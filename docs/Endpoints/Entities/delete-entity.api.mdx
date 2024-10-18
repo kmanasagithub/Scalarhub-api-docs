@@ -1,0 +1,154 @@
+---
+id: delete-entity
+title: "Delete entity"
+description: "Delete a entity from the system using their unique ID."
+sidebar_label: "Delete entity"
+hide_title: true
+hide_table_of_contents: true
+api: eJydU8Fu2zAM/RWBZyHOiu7i04rFAwIUW4F0pyAYFJmp1dmSKlFZAsP/PlB2vbTpabk4lh+fHvkeeyD1FKHcQmXJkMEIOwk1Rh2MJ+MslLDCFgmFEsiQszgE1wlqUMRzJOxEisY+8YEJIlnzklCsVwuQEFGnYOgM5baHPaqA4S5RA+V2N+wkBIze2YgRyh5uljf8eHvzdye+OktoaSGq8fJRTC02SWuM8ZDa9gyDhNvl7Uf1JL65ZOu5/I+hJmvfeNTmYLRYr4SdYSBBjxcymfK+NVoxWfEcmbGHqBvsFP+js0cowe2fURNIwJPqfIv8CUNwAUqYLp1lwMA/CZ+Xy2uxa0sYrGrFBsMRg6gyCcM7pMbVUEKdmwcJXvEYoYhatSqQOhU42Vf0ph7y7Jkk5tGn0EIJDZGPZVEobxaT1oV2XXH8BO8dfwiuTppfxMgDg7ykKYui7/cq4q8U2mEorgjunVbtXLuTYOzB5aEZ4hHBJgt/VKer0tccRnH3sBYrp1OHlrIJIIF7GnGfFsvFcvJL6eyXVR1zc90mee8C2/JG9WXfcYRk6zplGDUdfbmAcbYIQxd/HNgXo/FjtowpGO1dpE7ZC0HTAo3r877h/l/i/n/TpiwSnqjwrTKWheTO+ykrW5izwg2/LruE0tS88o2LxKjR159sKx+/JAy8vzsJRxWM2rN7290goUFVY8j5+o1nHrvW6HmaR9UmVnO1PhyEOcur6r56rGAY/gLgLo7l
+sidebar_class_name: "delete api-method"
+info_path: reference/api-reference/Endpoints/Entities/scalartax
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import Heading from "@theme/Heading";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete entity"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/scalartax/entities/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Delete a entity from the system using their unique ID.
+
+<div>
+  <div>
+    <ApiTabs
+      label={undefined}
+      id={undefined}
+    >
+      <TabItem
+        label={"202"}
+        value={"202"}
+      >
+        <div>
+          
+          
+          No Content. Entity Deleted Successfully
+          
+          
+        </div><div>
+          
+        </div>
+      </TabItem><TabItem
+        label={"404"}
+        value={"404"}
+      >
+        <div>
+          
+          
+          Not Found. Entity with the Specific ID not Found.
+          
+          
+        </div><div>
+          <MimeTabs
+            className={"openapi-tabs__mime"}
+            schemaType={"response"}
+          >
+            <TabItem
+              label={"application/json"}
+              value={"application/json"}
+            >
+              <SchemaTabs
+                className={"openapi-tabs__schema"}
+              >
+                <TabItem
+                  label={"Schema"}
+                  value={"Schema"}
+                >
+                  <details
+                    style={{}}
+                    className={"openapi-markdown__details response"}
+                    data-collapsed={false}
+                    open={true}
+                  >
+                    <summary
+                      style={{}}
+                      className={"openapi-markdown__details-summary-response"}
+                    >
+                      <strong>
+                        Schema
+                      </strong>
+                    </summary><div
+                      style={{"textAlign":"left","marginLeft":"1rem"}}
+                    >
+                      
+                    </div><ul
+                      style={{"marginLeft":"1rem"}}
+                    >
+                      <div
+                        style={{"marginTop":".5rem","marginBottom":".5rem"}}
+                      >
+                        
+                        
+                        object
+                        
+                        
+                      </div>
+                    </ul>
+                  </details>
+                </TabItem><TabItem
+                  label={"Example (from schema)"}
+                  value={"Example (from schema)"}
+                >
+                  <ResponseSamples
+                    responseExample={"{\n  \"error\": \"Entity Not Found\"\n}"}
+                    language={"json"}
+                  >
+                    
+                  </ResponseSamples>
+                </TabItem>
+              </SchemaTabs>
+            </TabItem>
+          </MimeTabs>
+        </div>
+      </TabItem><TabItem
+        label={"500"}
+        value={"500"}
+      >
+        <div>
+          
+          
+          Internal Server Error
+          
+          
+        </div><div>
+          
+        </div>
+      </TabItem>
+    </ApiTabs>
+  </div>
+</div>
+      
